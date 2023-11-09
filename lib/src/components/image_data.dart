@@ -4,26 +4,31 @@ import 'package:get/get.dart';
 class ImageData extends StatelessWidget {
   String icon;
   final double? width;
-  ImageData(this.icon, {Key? key, this.width=55,}) : super(key: key);
+  ImageData(
+    this.icon, {
+    Key? key,
+    this.width = 55,
+    required int size,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      icon,
-      width: width! / Get.mediaQuery.devicePixelRatio
-      );
+    return Image.asset(icon, width: width! / Get.mediaQuery.devicePixelRatio);
   }
 }
 
 // svg file 은 이거 할 필요 x
 class IconsPath {
-  static String get homeOff => 'assets/images/bottom_nav_home_off_icon.jpg';
-  static String get homeOn => 'assets/images/bottom_nav_home_on_icon.jpg';
-  static String get searchOff => 'assets/images/bottom_nav_search_off_icon.jpg';
-  static String get searchOn => 'assets/images/bottom_nav_search_on_icon.jpg';
-  static String get uploadIcon => 'assets/images/bottom_nav_upload_icon.jpg';
-  static String get activeOff => 'assets/images/bottom_nav_active_off_icon.jpg';
-  static String get activeOn => 'assets/images/bottom_nav_active_on_icon.jpg';
+  static String get homeOff => 'assets/images/bottom_nav_home_off.png';
+  static String get homeOn => 'assets/images/bottom_nav_home_on.png';
+  static String get infoOff => 'assets/images/bottom_nav_info_off_icon.png';
+  static String get infoOn => 'assets/images/bottom_nav_info_on_icon.png';
+  static String get boardOff => 'assets/images/bottom_nav_board_off_icon.png';
+  static String get boardOn => 'assets/images/bottom_nav_board_on_icon.png';
+  static String get alarmOff => 'assets/images/bottom_nav_alarm_off_icon.png';
+  static String get alarmOn => 'assets/images/bottom_nav_alarm_on_icon.png';
+  static String get mypageOff => 'assets/images/bottom_nav_mypage_off_icon.png';
+  //static String get mypageOn => 'assets/images/bottom_nav_mypage_on_icon.png';
   static String get logo => 'assets/images/logo.jpg';
   static String get directMessage => 'assets/images/direct_msg_icon.jpg';
   static String get plusIcon => 'assets/images/plus_icon.png';
