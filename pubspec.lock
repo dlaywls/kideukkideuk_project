@@ -76,7 +76,11 @@ packages:
     source: sdk
     version: "0.0.0"
   get:
+<<<<<<< HEAD
+    dependency: "direct dev"
+=======
     dependency: "direct main"
+>>>>>>> c28cd62f13ab48ff9fff0db05912077c084b3efa
     description:
       name: get
       sha256: e4e7335ede17452b391ed3b2ede016545706c01a02292a6c97619705e7d2a85e
