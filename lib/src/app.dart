@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:kideukkideuk_project/src/components/controller/bottom_nav_controller.dart';
+import 'package:kideukkideuk_project/src/controller/bottom_nav_controller.dart';
 import 'package:kideukkideuk_project/src/components/image_data.dart';
+import 'package:kideukkideuk_project/src/pages/board.dart';
 
 class App extends GetView<BottomNavController> {
   const App({Key? key}) : super(key: key);
@@ -12,7 +13,6 @@ class App extends GetView<BottomNavController> {
       child: Obx(
         () => Scaffold(
           // backgroundColor: Colors.blue, // 만약 배경화면 색 있다면 바꾸기
-          appBar: AppBar(),
           body: IndexedStack(
             index: controller.pageIndex.value,
             children: [
@@ -22,6 +22,7 @@ class App extends GetView<BottomNavController> {
               Container(
                 child: Center(child: Text('SEARCH')),
               ),
+              const Board(),
               Container(
                 child: Center(child: Text('UPLOAD')),
               ),
