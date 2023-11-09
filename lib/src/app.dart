@@ -49,25 +49,30 @@ class App extends GetView<BottomNavController> {
 
             items: [
               BottomNavigationBarItem(
-                icon: ImageData(IconsPath.homeOff),
-                activeIcon: ImageData(IconsPath.homeOn),
+                icon: ImageData(IconsPath.homeOff, size: 30),
+                activeIcon: ImageData(IconsPath.homeOn, size: 30),
                 label: 'home',
               ),
               BottomNavigationBarItem(
-                icon: ImageData(IconsPath.searchOff),
-                activeIcon: ImageData(IconsPath.searchOn),
+                icon: ImageData(IconsPath.infoOff, size: 30),
+                activeIcon: ImageData(IconsPath.infoOn, size: 30),
                 label: 'home',
               ),
               BottomNavigationBarItem(
-                icon: ImageData(IconsPath.uploadIcon),
+                icon: ImageData(IconsPath.boardOff, size: 30),
+                activeIcon: ImageData(IconsPath.boardOn, size: 30),
                 label: 'home',
               ),
               BottomNavigationBarItem(
-                icon: ImageData(IconsPath.activeOff),
-                activeIcon: ImageData(IconsPath.activeOn),
+                icon: ImageData(IconsPath.alarmOff, size: 30),
+                activeIcon: ImageData(IconsPath.alarmOn, size: 30),
                 label: 'home',
               ),
               BottomNavigationBarItem(
+                icon: ImageData(IconsPath.mypageOff, size: 30),
+                label: 'home',
+              ),
+              /*BottomNavigationBarItem(
                 icon: Container(
                   width: 30,
                   height: 30,
@@ -77,7 +82,7 @@ class App extends GetView<BottomNavController> {
                   ),
                 ),
                 label: 'home',
-              ),
+              ),*/
             ],
           ),
         ),
