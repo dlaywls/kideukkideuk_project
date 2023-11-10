@@ -10,6 +10,7 @@ class App extends GetView<BottomNavController> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
+      onWillPop: controller.willPopAction,
       child: Obx(
         () => Scaffold(
           // backgroundColor: Colors.blue, // 만약 배경화면 색 있다면 바꾸기
@@ -17,29 +18,36 @@ class App extends GetView<BottomNavController> {
             index: controller.pageIndex.value,
             children: [
               Container(
-                child: Center(child: Text('HOME')),
+                child: const Center(child: Text('HOME')),
               ),
               Container(
-                child: Center(child: Text('SEARCH')),
+                child: const Center(child: Text('SEARCH')),
               ),
               const Board(),
               Container(
-                child: Center(child: Text('UPLOAD')),
+                child: const Center(child: Text('UPLOAD')),
               ),
               Container(
-                child: Center(child: Text('ACTIVITY')),
+                child: const Center(child: Text('ACTIVITY')),
               ),
               Container(
-                child: Center(child: Text('MYPAGE')),
+                child: const Center(child: Text('MYPAGE')),
               ),
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             // label 없이 아이콘만 보여주기
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            // backgoundColor: Colors.blue,
+            showSelectedLabels: true,
+            showUnselectedLabels: true,
+            selectedLabelStyle: TextStyle(
+              color: Color(0x402A05),
+              fontSize: 10, // 선택된 텍스트 색상
+            ),
+            unselectedLabelStyle: TextStyle(
+              color: Color(0x9E9E9E),
+              fontSize: 10, // 선택되지 않은 텍스트 색상
+            ),
 
             // 기본 활성화 창 설정 (0 = 홈)
             currentIndex: controller.pageIndex.value,
@@ -52,43 +60,31 @@ class App extends GetView<BottomNavController> {
               BottomNavigationBarItem(
                 icon: ImageData(IconsPath.homeOff, size: 30),
                 activeIcon: ImageData(IconsPath.homeOn, size: 30),
-                label: 'home',
+                label: '홈',
               ),
               BottomNavigationBarItem(
                 icon: ImageData(IconsPath.infoOff, size: 30),
                 activeIcon: ImageData(IconsPath.infoOn, size: 30),
-                label: 'home',
+                label: '정보 링크',
               ),
               BottomNavigationBarItem(
                 icon: ImageData(IconsPath.boardOff, size: 30),
                 activeIcon: ImageData(IconsPath.boardOn, size: 30),
-                label: 'home',
+                label: '게시판',
               ),
               BottomNavigationBarItem(
                 icon: ImageData(IconsPath.alarmOff, size: 30),
                 activeIcon: ImageData(IconsPath.alarmOn, size: 30),
-                label: 'home',
+                label: '알림',
               ),
               BottomNavigationBarItem(
                 icon: ImageData(IconsPath.mypageOff, size: 30),
-                label: 'home',
-              ),
-              /*BottomNavigationBarItem(
-                icon: Container(
-                  width: 30,
-                  height: 30,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.grey,
-                  ),
-                ),
-                label: 'home',
-              ),*/
+                label: '마이',
+              )
             ],
           ),
         ),
       ),
-      onWillPop: controller.willPopAction,
     );
   }
 }
