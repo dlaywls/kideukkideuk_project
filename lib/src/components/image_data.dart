@@ -28,7 +28,7 @@ class IconsPath {
   static String get alarmOff => 'assets/images/bottom_nav_alarm_off_icon.png';
   static String get alarmOn => 'assets/images/bottom_nav_alarm_on_icon.png';
   static String get mypageOff => 'assets/images/bottom_nav_mypage_off_icon.png';
-  //static String get mypageOn => 'assets/images/bottom_nav_mypage_on_icon.png';
+  static String get write => 'assets/images/icon_write.png';
   static String get logo => 'assets/images/logo.jpg';
   static String get directMessage => 'assets/images/direct_msg_icon.jpg';
   static String get plusIcon => 'assets/images/plus_icon.png';
