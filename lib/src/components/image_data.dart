@@ -29,7 +29,7 @@ class IconsPath {
   static String get alarmOn => 'assets/images/bottom_nav_alarm_on_icon.png';
   static String get mypageOff => 'assets/images/bottom_nav_mypage_off_icon.png';
   static String get write => 'assets/images/icon_write.png';
-  static String get logo => 'assets/images/logo.jpg';
+  static String get logo => 'assets/images/home_logo.png';
   static String get directMessage => 'assets/images/direct_msg_icon.jpg';
   static String get plusIcon => 'assets/images/plus_icon.png';
   static String get postMoreIcon => 'assets/images/more_icon.jpg';
@@ -74,4 +74,6 @@ class IconsPath {
       'assets/images/mypage_bottom_sheet_setting_06.jpg';
   static String get mypageBottomSheetSetting07 =>
       'assets/images/mypage_bottom_sheet_setting_07.jpg';
+  static String get homeSearch =>
+      'assets/images/home_button_search.png';
 }
