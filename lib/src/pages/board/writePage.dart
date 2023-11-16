@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class WritePage extends StatelessWidget {
   WritePage(Null);
@@ -7,11 +6,11 @@ class WritePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('글쓰기 페이지'),
+        title: const Text('글쓰기 페이지'),
       ),
-      body: Center(
+      body: const Center(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: TextField(
             decoration: InputDecoration(
               hintText: '글을 적어주세요',
