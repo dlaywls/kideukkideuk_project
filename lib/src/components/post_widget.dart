@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:kideukkideuk_project/src/components/avatar_widget.dart';
 import 'package:kideukkideuk_project/src/components/image_data.dart';
 
@@ -14,7 +15,7 @@ class PostWidget extends StatelessWidget {
         children: [
           AvatarWidget(
             type: AvatarType.TYPE3,
-            nickname: 'KIDEUKKIDEUK',
+            nickname: '노동정보',
             size: 40,
             thumbPath: 
               'https://img.gqkorea.co.kr/gq/2022/09/style_632ac6869b755.jpg',
@@ -41,10 +42,21 @@ class PostWidget extends StatelessWidget {
       IconsPath.profileImage,
       size: 100
     );
+
+    
+    //return Image.asset('assets/images/1.jpg');
+    return ClipRRect(
+      child: Image.asset('assets/images/1.jpg'),
+      borderRadius: BorderRadius.circular(20.0),
+      
+    );
     */
-    return CachedNetworkImage(
-      imageUrl: 
-        'https://i.namu.wiki/i/IhFrc6uiSNlonNFRXzSNrKrhPKrjpmlmsB_SDg3x0PeW_L06BFuF7mOq8AcPDYjonfNpG64cQYsINU8sICeDpg.webp',
+    return Container(
+      margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+      child: ClipRRect(
+        child: Image.asset('assets/images/1.jpg'),
+        borderRadius: BorderRadius.circular(15.0),
+      ),
     );
   }
 
@@ -88,7 +100,7 @@ class PostWidget extends StatelessWidget {
       child: Column(
         children: [
           _header(), // 헤더
-          const SizedBox(height: 15),
+          const SizedBox(height: 10),
           _image(), // 이미지영역
           _infoCount(), // 좋아요 영역
           // _infoDescription(), // 글 영역
