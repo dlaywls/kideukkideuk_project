@@ -42,11 +42,7 @@ class PostWidget extends StatelessWidget {
       IconsPath.profileImage,
       size: 100
     );
-    
-    return CachedNetworkImage(
-      imageUrl: 
-        'https://i.namu.wiki/i/IhFrc6uiSNlonNFRXzSNrKrhPKrjpmlmsB_SDg3x0PeW_L06BFuF7mOq8AcPDYjonfNpG64cQYsINU8sICeDpg.webp',
-    );
+
     
     //return Image.asset('assets/images/1.jpg');
     return ClipRRect(
@@ -104,7 +100,7 @@ class PostWidget extends StatelessWidget {
       child: Column(
         children: [
           _header(), // 헤더
-          const SizedBox(height: 15),
+          const SizedBox(height: 10),
           _image(), // 이미지영역
           _infoCount(), // 좋아요 영역
           // _infoDescription(), // 글 영역

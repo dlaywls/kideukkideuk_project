@@ -75,16 +75,6 @@ class AvatarWidget extends StatelessWidget {
     );
   }
 
-/*
-  Widget type4Widget() {
-    return Container(
-      child: CircleAvatar(
-        backgroundImage: IconsPath.,
-        ),
-    );
-  }
-  */
-
   @override
   Widget build (BuildContext context) {
     switch (type) {
