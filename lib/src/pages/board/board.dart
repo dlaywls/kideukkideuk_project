@@ -15,7 +15,7 @@ class Board extends StatelessWidget {
           const Text(
             '게시판',
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Color(0xFF241701),
             ),
@@ -23,7 +23,7 @@ class Board extends StatelessWidget {
           const Text(
             '각 나라의 언어별로 나누어져 있습니다.',
             style: TextStyle(
-              fontSize: 12,
+              fontSize: 14,
               color: Color(0xFF505050),
             ),
           ).paddingOnly(top: 8, left: 30),
@@ -31,9 +31,12 @@ class Board extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 border: Border.all(color: Color(0xFFD2D2D2)), // 테두리 속성
-                borderRadius: BorderRadius.circular(17), // 테두리의 모서리를 둥글게
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(17),
+                    topRight: Radius.circular(17)), // 테두리의 모서리를 둥글게
               ),
-              margin: const EdgeInsets.all(20), // 테두리 주변의 간격
+              margin: const EdgeInsets.only(
+                  top: 20, right: 20, left: 20), // 테두리 주변의 간격
               child: ListView.builder(
                 itemCount: 10,
                 itemBuilder: (context, index) {
@@ -99,7 +102,7 @@ class Board extends StatelessWidget {
                         Text(
                           language,
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 14,
                             color: Color(0xFF505050),
                             fontWeight: FontWeight.bold,
                           ),
@@ -108,7 +111,7 @@ class Board extends StatelessWidget {
                         Text(
                           hello,
                           style: TextStyle(
-                            fontSize: 10,
+                            fontSize: 12,
                             color: Color(0xFFF2A931),
                             fontWeight: FontWeight.bold,
                           ),

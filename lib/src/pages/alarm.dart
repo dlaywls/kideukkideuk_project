@@ -24,7 +24,7 @@ class Alarm extends StatelessWidget {
           const Text(
             '알림',
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Color(0xFF241701),
             ),
@@ -33,9 +33,12 @@ class Alarm extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 border: Border.all(color: Color(0xFFD2D2D2)), // 테두리 속성
-                borderRadius: BorderRadius.circular(17), // 테두리의 모서리를 둥글게
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(17),
+                    topRight: Radius.circular(17)), // 테두리의 모서리를 둥글게
               ),
-              margin: const EdgeInsets.all(20), // 테두리 주변의 간격
+              margin: const EdgeInsets.only(
+                  top: 20, right: 20, left: 20), // 테두리 주변의 간격
               child: ListView.builder(
                 itemCount: dataList.length,
                 itemBuilder: (context, index) {
@@ -43,7 +46,7 @@ class Alarm extends StatelessWidget {
                     children: [
                       ListTile(
                         leading: CircleAvatar(
-                          radius: 16,
+                          radius: 18,
                           backgroundImage: AssetImage(
                               'assets/images/icon_commnet_notification.png'),
                           backgroundColor: Colors.white,
@@ -61,16 +64,16 @@ class Alarm extends StatelessWidget {
                         title: Text(
                           dataList[index]['title'] ?? '',
                           style: TextStyle(
-                            fontSize: 12.0,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFFbac170F01),
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w900,
+                            color: Color(0xFF170F01),
                           ),
                         ),
                         subtitle: Text(
                           dataList[index]['content'] ?? '',
                           style: TextStyle(
-                            fontSize: 10.0,
-                            color: Colors.black,
+                            fontSize: 12.0,
+                            color: Color(0xFF170F01),
                           ),
                         ),
 
