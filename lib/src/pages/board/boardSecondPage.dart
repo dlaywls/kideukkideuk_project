@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kideukkideuk_project/src/pages/board/commentPage.dart';
 import 'package:kideukkideuk_project/src/pages/board/writePage.dart';
 
 class SecondPage extends StatelessWidget {
@@ -22,7 +23,7 @@ class SecondPage extends StatelessWidget {
         title: Text(
           "$language 게시판",
           style: TextStyle(
-            fontSize: 14.0,
+            fontSize: 16.0,
             fontWeight: FontWeight.bold,
             color: Color(0xFF241701),
           ),
@@ -48,7 +49,7 @@ class SecondPage extends StatelessWidget {
                       title: Text(
                         dataList[index]['title'] ?? '',
                         style: TextStyle(
-                          fontSize: 12.0,
+                          fontSize: 14.0,
                           fontWeight: FontWeight.bold,
                           color: Color(0xFFbac170F01),
                         ),
@@ -59,7 +60,7 @@ class SecondPage extends StatelessWidget {
                           Text(
                             dataList[index]['content'] ?? '',
                             style: TextStyle(
-                              fontSize: 12.0,
+                              fontSize: 14.0,
                               color: Color(0xFFbac170F01),
                             ),
                           ),
@@ -77,7 +78,7 @@ class SecondPage extends StatelessWidget {
                                   Text(
                                     '2',
                                     style: TextStyle(
-                                      fontSize: 10.0,
+                                      fontSize: 12.0,
                                       color: Color(0xFFF56587),
                                     ),
                                   ),
@@ -95,7 +96,7 @@ class SecondPage extends StatelessWidget {
                                   Text(
                                     '2',
                                     style: TextStyle(
-                                      fontSize: 10.0,
+                                      fontSize: 12.0,
                                       color: Color(0xFF52B160),
                                     ),
                                   ),
@@ -110,7 +111,11 @@ class SecondPage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => WritePage(dataList[index]),
+                            builder: (context) => CommentPage(
+                              title: dataList[index]['title'] ?? '',
+                              content: dataList[index]['content'] ?? '',
+                              language: language,
+                            ),
                           ),
                         );
                       },
@@ -154,7 +159,7 @@ class SecondPage extends StatelessWidget {
                   const Text(
                     '글쓰기',
                     style: TextStyle(
-                      fontSize: 12.0,
+                      fontSize: 14.0,
                     ),
                   ),
                 ],

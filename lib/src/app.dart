@@ -53,7 +53,7 @@ class App extends GetView<BottomNavController> {
             // 기본 활성화 창 설정 (0 = 홈)
             currentIndex: controller.pageIndex.value,
             // 하단 바 띄워진 느낌 없애기 (선 없애기)
-            elevation: 0,
+            elevation: 0.8,
 
             onTap: controller.changeBottomNav,
 

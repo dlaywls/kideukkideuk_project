@@ -34,7 +34,10 @@ class IconsPath {
   static String get numberOfComments =>
       'assets/images/icon_number_of_comments.png';
   static String get commentNotification =>
-      'assets/images/icon_commnet_notification.png'; //여기까지 키득키득 이미지 파일
+      'assets/images/icon_commnet_notification.png';
+  static String get likeButton => 'assets/images/icon_like_button.png';
+  static String get commentSendButton =>
+      'assets/images/button_send_comment.png'; //여기까지 키득키득 이미지 파일
 
   static String get directMessage => 'assets/images/direct_msg_icon.jpg';
   static String get plusIcon => 'assets/images/plus_icon.png';
