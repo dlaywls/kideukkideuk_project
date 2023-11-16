@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kideukkideuk_project/src/pages/boardSecondPage.dart';
+import 'package:kideukkideuk_project/src/pages/board/boardSecondPage.dart';
 
 class Board extends StatelessWidget {
   const Board({Key? key}) : super(key: key);
