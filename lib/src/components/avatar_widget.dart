@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:kideukkideuk_project/src/components/image_data.dart';
 
 enum AvatarType { TYPE1, TYPE2, TYPE3 }
 
@@ -83,6 +84,8 @@ class AvatarWidget extends StatelessWidget {
         return type2Widget();
       case AvatarType.TYPE3:
         return type3Widget();
+      // case AvatarType.TYPE4:
+      //   return type4Widget();
     }
   }
 }
