@@ -84,16 +84,10 @@ class IconsPath {
   static String get mypageBottomSheetSetting07 =>
       'assets/images/mypage_bottom_sheet_setting_07.jpg';
 
-  static String get homeSearch =>
-      'assets/images/home_button_search.png';
-  static String get tapHomeOn =>
-      'assets/images/tap_home.png';
-  static String get homeWorkIcon =>
-      'assets/images/icon_work.png';
-  static String get homeHealthIcon =>
-      'assets/images/icon_health.png';
-  static String get homeUnivIcon =>
-      'assets/images/icon_univ.png';
-    
+  static String get homeSearch => 'assets/images/home_button_search.png';
+  static String get tapHomeOn => 'assets/images/tap_home.png';
+  static String get homeWorkIcon => 'assets/images/icon_work.png';
+  static String get homeHealthIcon => 'assets/images/icon_health.png';
+  static String get homeUnivIcon => 'assets/images/icon_univ.png';
 }
->>>>>>> main
+//>>>>>>> main
