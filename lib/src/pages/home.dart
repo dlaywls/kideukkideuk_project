@@ -30,6 +30,21 @@ class Home extends StatelessWidget {
     );
   }
 
+  Widget _infoBox() {
+    return Container(
+      decoration: BoxDecoration(
+      border: Border.all(color: Color(0xFFD2D2D2)), // 테두리 속성
+      borderRadius: BorderRadius.circular(17), // 테두리의 모서리를 둥글게
+      ),
+      margin: const EdgeInsets.all(20),  
+      child: (
+        Container (
+          child: const Text('정보 바로보기'),
+        )
+      )
+    );
+  }
+
   // 중간 게시글 세로 스크롤 리스트
   Widget _postList() {
     return Column(
@@ -59,7 +74,8 @@ class Home extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          _storyBoardList(),
+          //_storyBoardList(),
+          _infoBox(),
           _postList(),
         ],
       ),

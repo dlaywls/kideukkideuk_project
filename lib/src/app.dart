@@ -58,7 +58,8 @@ class App extends GetView<BottomNavController> {
             items: [
               BottomNavigationBarItem(
                 icon: ImageData(IconsPath.homeOff, size: 30),
-                activeIcon: ImageData(IconsPath.homeOn, size: 30),
+                //activeIcon: ImageData(IconsPath.homeOn, size: 30),
+                activeIcon: ImageData(IconsPath.tapHomeOn, size: 65),
                 label: '홈',
               ),
               BottomNavigationBarItem(
