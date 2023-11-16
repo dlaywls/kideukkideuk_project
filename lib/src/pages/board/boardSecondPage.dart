@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kideukkideuk_project/src/pages/board/commentPage.dart';
@@ -22,18 +23,18 @@ class SecondPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "$language 게시판",
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16.0,
             fontWeight: FontWeight.bold,
             color: Color(0xFF241701),
           ),
         ), // AppBar에 버튼 텍스트 표시
-        elevation: 0, // 그림자 제거
+        elevation: 0.5, // 그림자 제거
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(2.0), // 선의 높이
+          preferredSize: const Size.fromHeight(2.0), // 선의 높이
           child: Container(
             height: 1.0,
-            color: Color(0xFFD4D4D4), // 선의 색상
+            color: const Color(0xFFD4D4D4), // 선의 색상
           ),
         ),
       ),
@@ -48,7 +49,7 @@ class SecondPage extends StatelessWidget {
                     ListTile(
                       title: Text(
                         dataList[index]['title'] ?? '',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 14.0,
                           fontWeight: FontWeight.bold,
                           color: Color(0xFFbac170F01),
@@ -59,7 +60,7 @@ class SecondPage extends StatelessWidget {
                         children: [
                           Text(
                             dataList[index]['content'] ?? '',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 14.0,
                               color: Color(0xFFbac170F01),
                             ),
@@ -74,8 +75,8 @@ class SecondPage extends StatelessWidget {
                                     width: 16,
                                     height: 16,
                                   ),
-                                  SizedBox(width: 2),
-                                  Text(
+                                  const SizedBox(width: 2),
+                                  const Text(
                                     '2',
                                     style: TextStyle(
                                       fontSize: 12.0,
@@ -84,7 +85,7 @@ class SecondPage extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              SizedBox(width: 10),
+                              const SizedBox(width: 10),
                               Row(
                                 children: [
                                   Image.asset(
@@ -92,8 +93,8 @@ class SecondPage extends StatelessWidget {
                                     width: 16,
                                     height: 16,
                                   ),
-                                  SizedBox(width: 2),
-                                  Text(
+                                  const SizedBox(width: 2),
+                                  const Text(
                                     '2',
                                     style: TextStyle(
                                       fontSize: 12.0,
@@ -121,7 +122,7 @@ class SecondPage extends StatelessWidget {
                       },
                     ),
                     // 구분선 추가
-                    Divider(
+                    const Divider(
                       color: Color(0xFFD4D4D4), // 구분선 색상
                       thickness: 1, // 구분선 두께
                     ),
@@ -138,7 +139,7 @@ class SecondPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => WritePage(null),
+                    builder: (context) => const WritePage(),
                   ),
                 );
               },

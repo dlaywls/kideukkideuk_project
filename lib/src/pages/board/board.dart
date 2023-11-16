@@ -31,7 +31,7 @@ class Board extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 border: Border.all(color: Color(0xFFD2D2D2)), // 테두리 속성
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(17),
                     topRight: Radius.circular(17)), // 테두리의 모서리를 둥글게
               ),
@@ -101,16 +101,16 @@ class Board extends StatelessWidget {
                       children: [
                         Text(
                           language,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 14,
                             color: Color(0xFF505050),
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         Text(
                           hello,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 12,
                             color: Color(0xFFF2A931),
                             fontWeight: FontWeight.bold,
