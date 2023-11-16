@@ -7,7 +7,10 @@ class CommentPage extends StatefulWidget {
   final String language;
 
   const CommentPage(
-      {required this.title, required this.content, required this.language});
+      {super.key,
+      required this.title,
+      required this.content,
+      required this.language});
 
   @override
   // ignore: library_private_types_in_public_api
@@ -17,6 +20,7 @@ class CommentPage extends StatefulWidget {
 class _CommentPageState extends State<CommentPage> {
   @override
   bool isLiked = false;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -28,7 +32,7 @@ class _CommentPageState extends State<CommentPage> {
             color: Color(0xFF241701),
           ),
         ),
-        elevation: 0, // 그림자 제거
+        elevation: 0.5, // 그림자 제거
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(2.0), // 선의 높이
           child: Container(
@@ -37,14 +41,14 @@ class _CommentPageState extends State<CommentPage> {
           ),
         ),
       ),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: Column(
           children: [
             // 클릭한 글
             Container(
-              margin: const EdgeInsets.all(8),
+              margin: const EdgeInsets.all(5),
               padding: const EdgeInsets.only(right: 8, left: 8, top: 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +69,7 @@ class _CommentPageState extends State<CommentPage> {
                           style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFFF170F01)))
+                              color: Color(0xfff170f01)))
                       .marginOnly(left: 8, top: 12, bottom: 8),
                   //글 내용
                   Text(widget.content,
@@ -83,7 +87,7 @@ class _CommentPageState extends State<CommentPage> {
                             width: 16,
                             height: 16,
                           ),
-                          SizedBox(width: 2),
+                          const SizedBox(width: 2),
                           const Text(
                             '2',
                             style: TextStyle(
@@ -93,7 +97,7 @@ class _CommentPageState extends State<CommentPage> {
                           ),
                         ],
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       // 댓글 수
                       Row(
                         children: [
@@ -102,7 +106,7 @@ class _CommentPageState extends State<CommentPage> {
                             width: 16,
                             height: 16,
                           ),
-                          SizedBox(width: 2),
+                          const SizedBox(width: 2),
                           const Text(
                             '2',
                             style: TextStyle(
@@ -170,7 +174,7 @@ class _CommentPageState extends State<CommentPage> {
             // 댓글 리사이클러뷰
             Expanded(
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 8),
+                margin: const EdgeInsets.symmetric(horizontal: 8),
                 color: Colors.white,
                 child: ListView.builder(
                   itemCount: 10, // 댓글 아이템 개수
@@ -186,24 +190,23 @@ class _CommentPageState extends State<CommentPage> {
 
             // 댓글 쓰는 곳
             Container(
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(5),
               child: Row(
                 children: [
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: "댓글을 입력하세요.",
-                        hintStyle:
-                            TextStyle(fontSize: 12, color: Color(0xff9E9E9E)),
+                        hintStyle: const TextStyle(
+                            fontSize: 12, color: Color(0xff9E9E9E)),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                           borderSide: BorderSide.none,
                         ),
                         filled: true,
-                        fillColor: Color(0xffECECEC),
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                        fillColor: const Color(0xffECECEC),
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 12),
 
                         //보내기 버튼
                         suffixIcon: IconButton(

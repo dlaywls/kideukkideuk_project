@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kideukkideuk_project/src/pages/board/boardSecondPage.dart';
-import 'package:kideukkideuk_project/src/pages/board/writePage.dart';
+import 'package:kideukkideuk_project/src/pages/board/commentPage.dart';
 
 class Alarm extends StatelessWidget {
   Alarm({Key? key}) : super(key: key);
@@ -32,8 +31,8 @@ class Alarm extends StatelessWidget {
           Expanded(
             child: Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xFFD2D2D2)), // 테두리 속성
-                borderRadius: BorderRadius.only(
+                border: Border.all(color: const Color(0xFFD2D2D2)), // 테두리 속성
+                borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(17),
                     topRight: Radius.circular(17)), // 테두리의 모서리를 둥글게
               ),
@@ -47,7 +46,7 @@ class Alarm extends StatelessWidget {
                       ListTile(
                         leading: CircleAvatar(
                           radius: 18,
-                          backgroundImage: AssetImage(
+                          backgroundImage: const AssetImage(
                               'assets/images/icon_commnet_notification.png'),
                           backgroundColor: Colors.white,
                           foregroundColor: Colors.black, // 테두리 색상
@@ -63,7 +62,7 @@ class Alarm extends StatelessWidget {
                         ),
                         title: Text(
                           dataList[index]['title'] ?? '',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 14.0,
                             fontWeight: FontWeight.w900,
                             color: Color(0xFF170F01),
@@ -71,7 +70,7 @@ class Alarm extends StatelessWidget {
                         ),
                         subtitle: Text(
                           dataList[index]['content'] ?? '',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 12.0,
                             color: Color(0xFF170F01),
                           ),
@@ -82,7 +81,11 @@ class Alarm extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => WritePage(dataList[index]),
+                              builder: (context) => CommentPage(
+                                title: dataList[index]['title'] ?? '',
+                                content: dataList[index]['content'] ?? '',
+                                language: "한국어",
+                              ),
                             ),
                           );
                         },
