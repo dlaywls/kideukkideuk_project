@@ -1,5 +1,6 @@
 {
     "java.project.sourcePaths": [
         "assets/images"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
