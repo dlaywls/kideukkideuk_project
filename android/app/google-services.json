@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "11275459870",
+    "project_id": "kideuk-a3447",
+    "storage_bucket": "kideuk-a3447.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11275459870:android:04d7984e236814a58c3d0f",
+        "android_client_info": {
+          "package_name": "com.kideukkideuk.kideukkideuk_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqKXE8ifkYUTOrcXthYqdRyfoj7qFtHXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

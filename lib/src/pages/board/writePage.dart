@@ -2,11 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kideukkideuk_project/src/pages/board/boardSecondPage.dart';
 
-class WritePage extends StatelessWidget {
-  const WritePage({super.key});
+class WritePage extends StatefulWidget {
+  const WritePage({Key? key}) : super(key: key);
+
+  @override
+  _WritePageState createState() => _WritePageState();
+}
+
+class _WritePageState extends State<WritePage> {
+  TextEditingController titleController = TextEditingController();
+  TextEditingController contentController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    bool isFieldsFilled =
+        titleController.text.isNotEmpty && contentController.text.isNotEmpty;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -18,20 +29,18 @@ class WritePage extends StatelessWidget {
           ),
         ),
         elevation: 0.5,
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(2.0), // 선의 높이
-          child: Container(
-            height: 1.0,
-            color: const Color(0xFFD4D4D4), // 선의 색상
-          ),
-        ),
         actions: [
           ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
+            onPressed: isFieldsFilled
+                ? () {
+                    Navigator.pop(context);
+                  }
+                : null,
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF9E9E9E),
+              backgroundColor: isFieldsFilled
+                  ? const Color(
+                      0xFF52B160) // Change the color when fields are filled
+                  : const Color(0xFF9E9E9E),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
@@ -51,31 +60,30 @@ class WritePage extends StatelessWidget {
       body: Column(
         children: [
           TextFormField(
+            controller: titleController,
+            textAlignVertical: TextAlignVertical.top,
             decoration: const InputDecoration(
               hintText: '제목',
               hintStyle: TextStyle(color: Color(0xff9E9E9E)),
-              filled: true,
-              fillColor: Colors.white,
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.white),
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Color(0xffD4D4D4)),
               ),
+              contentPadding: EdgeInsets.all(5),
             ),
           ),
           TextFormField(
+            controller: contentController,
             maxLines: null,
             textAlignVertical: TextAlignVertical.top,
             decoration: const InputDecoration(
               hintText: '내용을 입력하세요',
               hintStyle: TextStyle(color: Color(0xff9E9E9E)),
-              filled: true,
-              fillColor: Colors.white,
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.white),
-              ),
+              enabledBorder: InputBorder.none, // 밑줄 없음
+              contentPadding: EdgeInsets.all(5),
             ),
           ),
         ],
-      ),
+      ).marginOnly(right: 20, left: 20, top: 18),
     );
   }
 }
