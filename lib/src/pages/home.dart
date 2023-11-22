@@ -37,11 +37,33 @@ class Home extends StatelessWidget {
       borderRadius: BorderRadius.circular(17), // 테두리의 모서리를 둥글게
       ),
       margin: const EdgeInsets.all(20),  
-      child: (
-        Container (
-          child: const Text('정보 바로보기'),
-        )
-      )
+      child: Row(
+        children: [
+          Column(
+            children: [
+              const Text('정보 바로보기'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ImageData(
+                    IconsPath.homeWorkIcon, // 노동
+                    size: 300,
+                  ),
+                  ImageData(
+                    IconsPath.homeHealthIcon, //보건
+                    size: 300,
+                  ),
+                  ImageData(
+                    IconsPath.homeUnivIcon, // 대학생활
+                    size: 300,
+                  ),
+                ],
+              ),
+            ],
+          ),
+  
+        ],
+      ),
     );
   }
 
@@ -52,6 +74,7 @@ class Home extends StatelessWidget {
     );
   }
 
+  
 
   @override
   Widget build(BuildContext context) {

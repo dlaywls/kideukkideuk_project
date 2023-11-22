@@ -37,25 +37,33 @@ class PostWidget extends StatelessWidget {
   }
 
   Widget _image() {
-    /*
-    return ImageData(
-      IconsPath.profileImage,
-      size: 100
-    );
-
-    
-    //return Image.asset('assets/images/1.jpg');
-    return ClipRRect(
-      child: Image.asset('assets/images/1.jpg'),
-      borderRadius: BorderRadius.circular(20.0),
-      
-    );
-    */
     return Container(
       margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
       child: ClipRRect(
         child: Image.asset('assets/images/1.jpg'),
         borderRadius: BorderRadius.circular(15.0),
+      ),
+    );
+  }
+
+  // 게시글 가로 스크롤
+  Widget _cardNewsList() {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: List.generate(
+          6,
+          (index) =>  Container(
+            width: 400,
+            height: 400,
+            //margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+            margin: const EdgeInsets.only(left: 5, right: 5, bottom: 5),
+            child: ClipRRect(
+              child: Image.asset('assets/cards/1.jpg'),
+              borderRadius: BorderRadius.circular(15.0),
+            ),
+          ),
+        )
       ),
     );
   }
@@ -101,7 +109,8 @@ class PostWidget extends StatelessWidget {
         children: [
           _header(), // 헤더
           const SizedBox(height: 10),
-          _image(), // 이미지영역
+          //_image(), // 이미지영역
+          _cardNewsList(),
           _infoCount(), // 좋아요 영역
           // _infoDescription(), // 글 영역
           // _replyTextBtn(), // 댓글 영역
