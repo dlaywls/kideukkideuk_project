@@ -18,7 +18,6 @@ class CommentPage extends StatefulWidget {
 }
 
 class _CommentPageState extends State<CommentPage> {
-  @override
   bool isLiked = false;
   @override
   Widget build(BuildContext context) {
