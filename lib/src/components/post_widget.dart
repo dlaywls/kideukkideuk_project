@@ -98,6 +98,7 @@ class PostWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top:20),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _header(), // 헤더
           const SizedBox(height: 10),

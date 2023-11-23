@@ -30,7 +30,7 @@ class Root extends GetView<AuthController> {
             },
           );
         } else {
-          return const Login();
+          return const App(); // test
         }
       },
     );
