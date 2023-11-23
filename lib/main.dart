@@ -1,5 +1,7 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:kideukkideuk_project/root.dart';
 import 'package:kideukkideuk_project/src/app.dart';
 import 'package:kideukkideuk_project/src/binding/init_bindings.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -7,9 +9,11 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   runApp(const MyApp());
 }
 
@@ -33,7 +37,7 @@ class MyApp extends StatelessWidget {
         //home: const MyHomePage(title: 'Flutter Demo Home Page'),
 
         initialBinding: InitBinding(),
-        home: const App() // 버튼 네비게이션 관리, 인덱스에 맞게 변환 (ctrl + .)
+        home: const Root() // 버튼 네비게이션 관리, 인덱스에 맞게 변환 (ctrl + .)
         );
   }
 }

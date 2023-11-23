@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 import 'package:kideukkideuk_project/src/pages/board/commentPage.dart';
 import 'package:kideukkideuk_project/src/pages/board/writePage.dart';
 
-class SecondPage extends StatelessWidget {
+class Post extends StatelessWidget {
   final String language;
 
-  SecondPage({Key? key, required this.language}) : super(key: key);
+  Post({Key? key, required this.language}) : super(key: key);
 
   // 가상의 데이터 리스트 (제목, 글)
   final List<Map<String, String>> dataList = [
