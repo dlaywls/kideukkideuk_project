@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kideukkideuk_project/src/pages/board/boardSecondPage.dart';
+import 'package:kideukkideuk_project/src/pages/board/post.dart';
 
 class Board extends StatelessWidget {
   const Board({Key? key}) : super(key: key);
@@ -123,7 +123,7 @@ class Board extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SecondPage(language: language),
+                          builder: (context) => Post(language: language),
                         ),
                       );
                     },
