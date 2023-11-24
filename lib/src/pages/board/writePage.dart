@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kideukkideuk_project/src/pages/board/postPage.dart';
+import 'package:kideukkideuk_project/src/repository/post_repositroy.dart';
 
 class WritePage extends StatefulWidget {
-  const WritePage({Key? key}) : super(key: key);
+  final int boardId;
+  final String language;
+
+  WritePage({Key? key, required this.boardId, required this.language})
+      : super(key: key);
 
   @override
   _WritePageState createState() => _WritePageState();
 }
 
 class _WritePageState extends State<WritePage> {
+  final PostRepository _postRepository = PostRepository();
   TextEditingController titleController = TextEditingController();
   TextEditingController contentController = TextEditingController();
 
@@ -17,7 +24,19 @@ class _WritePageState extends State<WritePage> {
 
   void _onCompletePressed() {
     if (isFieldsFilled) {
-      Navigator.pop(context);
+      _postRepository.addPost(
+          title: titleController.text,
+          contents: contentController.text,
+          boardId: widget.boardId);
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => PostView(
+            language: widget.language,
+            id: widget.boardId,
+          ),
+        ),
+      );
     }
   }
 
