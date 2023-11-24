@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:kideukkideuk_project/src/models/kideuk_user.dart';
 
@@ -22,6 +23,17 @@ class UserRepository {
       return true;
     } catch (e) {
       return false;
+    }
+  }
+
+  //현재 사용자의 id 가져오기
+  static Future<String?> getCurrentUserId() async {
+    try {
+      User? user = FirebaseAuth.instance.currentUser;
+      return user?.uid;
+    } catch (e) {
+      print("Error getting current user ID: $e");
+      return null;
     }
   }
 }

@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kideukkideuk_project/src/controller/post_controller.dart';
+import 'package:kideukkideuk_project/src/models/post.dart';
 
 class CommentPage extends StatefulWidget {
+  final PostController controller = Get.put(PostController());
   final String title;
   final String content;
   final String language;
+  final int likeCount;
+  final int commentCount;
 
-  const CommentPage(
+  CommentPage(
       {super.key,
       required this.title,
       required this.content,
-      required this.language});
+      required this.language,
+      required this.likeCount,
+      required this.commentCount});
 
   @override
   // ignore: library_private_types_in_public_api
@@ -19,6 +26,11 @@ class CommentPage extends StatefulWidget {
 
 class _CommentPageState extends State<CommentPage> {
   bool isLiked = false;
+
+  get likeCount => null;
+
+  get commnetCount => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,6 +91,7 @@ class _CommentPageState extends State<CommentPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       //좋아요 수
+
                       Row(
                         children: [
                           Image.asset(
@@ -87,9 +100,9 @@ class _CommentPageState extends State<CommentPage> {
                             height: 16,
                           ),
                           const SizedBox(width: 2),
-                          const Text(
-                            '2',
-                            style: TextStyle(
+                          Text(
+                            '${likeCount ?? 0}',
+                            style: const TextStyle(
                               fontSize: 12.0,
                               color: Color(0xFFF56587),
                             ),
@@ -106,9 +119,9 @@ class _CommentPageState extends State<CommentPage> {
                             height: 16,
                           ),
                           const SizedBox(width: 2),
-                          const Text(
-                            '2',
-                            style: TextStyle(
+                          Text(
+                            '${commnetCount ?? 0}',
+                            style: const TextStyle(
                               fontSize: 12.0,
                               color: Color(0xFF52B160),
                             ),
