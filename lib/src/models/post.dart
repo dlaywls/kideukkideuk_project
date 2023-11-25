@@ -31,8 +31,8 @@ class Post {
           : DateTime.parse(data['datetime'] as String),
       boardId: data['board_id'] ?? '',
       userId: data['userId'] == null ? '' : data['userId'] as String,
-      likeCount: data['likeCount'] ?? 0,
-      commentCount: data['like_count'] ?? 0,
+      likeCount: data['like_count'] ?? 0,
+      commentCount: data['comment_count'] ?? 0,
     );
   }
 
@@ -43,7 +43,7 @@ class Post {
       'datetime': dateTime?.toUtc().toIso8601String(),
       'board_id': boardId,
       'userId': userId,
-      'likeCount': likeCount,
+      'like_count': likeCount,
       'comment_count': commentCount
     };
   }

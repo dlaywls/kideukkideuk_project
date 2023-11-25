@@ -82,12 +82,12 @@ class Alarm extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) => CommentPage(
-                                title: dataList[index]['title'] ?? '',
-                                content: dataList[index]['content'] ?? '',
-                                language: "한국어",
-                                likeCount: 0,
-                                commentCount: 0,
-                              ),
+                                  title: dataList[index]['title'] ?? '',
+                                  content: dataList[index]['content'] ?? '',
+                                  language: "한국어",
+                                  likeCount: 0,
+                                  commentCount: 0,
+                                  postId: ""),
                             ),
                           );
                         },
