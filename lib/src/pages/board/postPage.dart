@@ -9,6 +9,7 @@ import 'package:kideukkideuk_project/src/pages/board/writePage.dart';
 class PostView extends StatelessWidget {
   final String language;
   final int id;
+
   final PostController controller = Get.put(PostController());
 
   PostView({Key? key, required this.language, required this.id})
@@ -16,6 +17,8 @@ class PostView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String? postId;
+
     controller.fetchPosts(id);
     return Scaffold(
       appBar: AppBar(
@@ -44,6 +47,9 @@ class PostView extends StatelessWidget {
                 itemCount: controller.posts.length,
                 itemBuilder: (context, index) {
                   Post post = controller.posts[index];
+                  postId = post.id;
+                  //print("postId: " + postId);
+                  //String postId=post.getPostId();
                   return Column(
                     children: [
                       ListTile(
@@ -114,7 +120,8 @@ class PostView extends StatelessWidget {
                               content: post.contents ?? '',
                               language: language,
                               likeCount: post.likeCount ?? 0,
-                              commentCount: post.commentCount ?? 0));
+                              commentCount: post.commentCount ?? 0,
+                              postId: postId ?? ''));
                         },
                       ),
                       // 구분선 추가

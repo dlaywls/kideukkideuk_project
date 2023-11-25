@@ -16,4 +16,16 @@ class PostController extends GetxController {
     posts.assignAll(fetchedPosts);
     print(posts.length);
   }
+
+  Future<String> loadUserId({required String postId}) async {
+    String? userId;
+    userId = await _postRepository.getPostUserId(postId: postId);
+    if (userId != null) {
+      print("userId: $userId");
+      return userId;
+    } else {
+      print("게시물 작성자 아이디를 가져오는 데 실패했습니다.");
+      return "실패";
+    }
+  }
 }
