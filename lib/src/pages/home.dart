@@ -89,7 +89,7 @@ class Home extends StatelessWidget {
             ),
           ).paddingOnly(top: 10, left: 30),
           const Text(
-            '오늘 당신의 하루를 응원합니다~!',
+            '오늘 당신\의 하루를 응원합니다~!',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
