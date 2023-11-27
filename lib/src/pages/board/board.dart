@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kideukkideuk_project/src/pages/board/post.dart';
+import 'package:kideukkideuk_project/src/pages/board/postPage.dart';
 
 class Board extends StatelessWidget {
   const Board({Key? key}) : super(key: key);
@@ -42,58 +42,72 @@ class Board extends StatelessWidget {
                 itemBuilder: (context, index) {
                   String language;
                   String hello;
+                  int id;
                   switch (index) {
                     case 0:
                       language = '한국어';
                       hello = "안녕하세요";
+                      id = index;
                       break;
                     case 1:
                       language = '영어';
                       hello = "Hello";
+                      id = index;
                       break;
                     case 2:
                       language = '일본어';
                       hello = "こんにちは";
+                      id = index;
                       break;
                     case 3:
                       language = '중국어';
                       hello = "你好。";
+                      id = index;
                       break;
                     case 4:
                       language = '베트남어';
                       hello = "Xin chào";
+                      id = index;
                       break;
                     case 5:
                       language = '스페인어';
                       hello = "Hola";
+                      id = index;
                       break;
                     case 6:
                       language = '러시아어';
                       hello = "Здравствуйте; как поживаете";
+                      id = index;
                       break;
                     case 7:
                       language = '프랑스어';
                       hello = "Bonjour";
+                      id = index;
                       break;
                     case 8:
                       language = '독일어';
                       hello = "Guten Tag";
+                      id = index;
                       break;
                     case 9:
                       language = '아랍어';
                       hello = "نهارك سعيد";
+                      id = index;
                       break;
                     case 10:
                       language = '터키어';
                       hello = "Gün aydın";
+                      id = index;
                       break;
                     case 11:
                       language = '말레이어';
                       hello = "Apa Khabar";
+                      id = index;
                       break;
                     default:
                       language = '기타';
                       hello = "기타";
+                      id = 12;
                   }
                   return ListTile(
                     title: Row(
@@ -123,7 +137,8 @@ class Board extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Post(language: language),
+                          builder: (context) =>
+                              PostView(language: language, id: id),
                         ),
                       );
                     },
