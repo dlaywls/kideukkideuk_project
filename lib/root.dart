@@ -14,7 +14,7 @@ class Root extends StatelessWidget {
         if (user.hasData) {
           return const Login();
         } else {
-          return const App(); // test
+          return const App();
         }
       },
     );
