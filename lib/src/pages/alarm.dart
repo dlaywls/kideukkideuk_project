@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kideukkideuk_project/src/controller/auth_controller.dart';
+import 'package:kideukkideuk_project/src/controller/notification_controller.dart';
 import 'package:kideukkideuk_project/src/pages/board/commentPage.dart';
+import 'package:kideukkideuk_project/src/models/notification.dart'
+    // ignore: library_prefixes
+    as ProjectNotification;
 
 class Alarm extends StatelessWidget {
   Alarm({Key? key}) : super(key: key);
 
-  // 가상의 데이터 리스트 (제목, 글)
-  final List<Map<String, String>> dataList = [
-    {'title': '제목1', 'content': '알림 내용1'},
-    {'title': '제목2', 'content': '알림 내용2'},
-    {'title': '제목3', 'content': '알림 내용3'},
-    // 필요에 따라 더 많은 데이터 추가 가능
-  ];
+  final NotificationController _notificationController =
+      Get.put(NotificationController());
+  final AuthController controller = AuthController();
 
   @override
   Widget build(BuildContext context) {
+    _notificationController.fetchNotifications();
+
     return Scaffold(
       appBar: null,
       body: Column(
@@ -39,8 +42,53 @@ class Alarm extends StatelessWidget {
               margin: const EdgeInsets.only(
                   top: 20, right: 20, left: 20), // 테두리 주변의 간격
               child: ListView.builder(
-                itemCount: dataList.length,
+                itemCount: _notificationController.notifications.length,
                 itemBuilder: (context, index) {
+                  ProjectNotification.Notification notification =
+                      _notificationController.notifications[index];
+                  String language;
+                  int? id = notification.boardId;
+                  switch (id) {
+                    case 0:
+                      language = '한국어';
+                      break;
+                    case 1:
+                      language = '영어';
+                      break;
+                    case 2:
+                      language = '일본어';
+                      break;
+                    case 3:
+                      language = '중국어';
+                      break;
+                    case 4:
+                      language = '베트남어';
+                      break;
+                    case 5:
+                      language = '스페인어';
+                      break;
+                    case 6:
+                      language = '러시아어';
+                      break;
+                    case 7:
+                      language = '프랑스어';
+                      break;
+                    case 8:
+                      language = '독일어';
+                      break;
+                    case 9:
+                      language = '아랍어';
+                      break;
+                    case 10:
+                      language = '터키어';
+                      break;
+                    case 11:
+                      language = '말레이어';
+                      break;
+                    default:
+                      language = '기타';
+                  }
+
                   return Column(
                     children: [
                       ListTile(
@@ -61,7 +109,7 @@ class Alarm extends StatelessWidget {
                           ),
                         ),
                         title: Text(
-                          dataList[index]['title'] ?? '',
+                          '[ ${language} 게시판 ]',
                           style: const TextStyle(
                             fontSize: 14.0,
                             fontWeight: FontWeight.w900,
@@ -69,7 +117,9 @@ class Alarm extends StatelessWidget {
                           ),
                         ),
                         subtitle: Text(
-                          dataList[index]['content'] ?? '',
+                          notification.contents ?? " 정보 없음 ",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
                             fontSize: 12.0,
                             color: Color(0xFF170F01),
@@ -82,8 +132,8 @@ class Alarm extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) => CommentPage(
-                                  title: dataList[index]['title'] ?? '',
-                                  content: dataList[index]['content'] ?? '',
+                                  title: "알람이다.",
+                                  content: "알람이다.",
                                   language: "한국어",
                                   likeCount: 0,
                                   commentCount: 0,
