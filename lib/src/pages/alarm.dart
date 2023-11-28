@@ -4,6 +4,7 @@ import 'package:kideukkideuk_project/src/controller/auth_controller.dart';
 import 'package:kideukkideuk_project/src/controller/notification_controller.dart';
 import 'package:kideukkideuk_project/src/pages/board/commentPage.dart';
 import 'package:kideukkideuk_project/src/models/notification.dart'
+    // ignore: library_prefixes
     as ProjectNotification;
 
 class Alarm extends StatelessWidget {
