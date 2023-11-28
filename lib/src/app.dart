@@ -4,6 +4,7 @@ import 'package:kideukkideuk_project/src/controller/bottom_nav_controller.dart';
 import 'package:kideukkideuk_project/src/components/image_data.dart';
 import 'package:kideukkideuk_project/src/pages/alarm.dart';
 import 'package:kideukkideuk_project/src/pages/board/board.dart';
+import 'package:kideukkideuk_project/src/pages/mypage/mypage.dart';
 import 'package:kideukkideuk_project/src/pages/home.dart';
 
 class App extends GetView<BottomNavController> {
@@ -25,9 +26,7 @@ class App extends GetView<BottomNavController> {
               ),
               const Board(),
               Alarm(),
-              Container(
-                child: const Center(child: Text('UPLOAD')),
-              ),
+              const Mypage(),
               /*Container(
                 child: const Center(child: Text('ACTIVITY')),
               ),

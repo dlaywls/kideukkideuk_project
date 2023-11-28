@@ -29,7 +29,7 @@ class Root extends GetView<AuthController> {
             },
           );
         } else {
-          return const App(); // test
+          return const App();
         }
       },
     );
