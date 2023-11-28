@@ -34,4 +34,9 @@ class AuthController extends GetxController {
       return ' ';
     }
   }*/
+
+  Future<String?> getUserId() async {
+    String? userId = await UserRepository.getCurrentUserId();
+    return userId;
+  }
 }

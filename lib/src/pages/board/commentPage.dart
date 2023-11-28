@@ -76,13 +76,15 @@ class _CommentPageState extends State<CommentPage> {
   }
 
   void onAddCommentPressed(String contents, String postId) async {
-    await commentController.fetchComments(postId: postId); // 댓글을 가져오고
     commentController.addComment(contents: contents, postId: postId); // 댓글을 추가
-    //setState(() {});
+    postController.fetchCommentCount(postId: postId);
+    await commentController.fetchComments(postId: postId); // 댓글을 가져오고
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
+    print("postId: " + widget.postId);
     return Scaffold(
       appBar: AppBar(
         title: Text(

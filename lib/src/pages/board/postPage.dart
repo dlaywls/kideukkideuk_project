@@ -1,4 +1,3 @@
-// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kideukkideuk_project/src/controller/post_controller.dart';
@@ -17,8 +16,6 @@ class PostView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String? postId;
-
     controller.fetchPosts(id);
     return Scaffold(
       appBar: AppBar(
@@ -47,14 +44,13 @@ class PostView extends StatelessWidget {
                 itemCount: controller.posts.length,
                 itemBuilder: (context, index) {
                   Post post = controller.posts[index];
-                  postId = post.id;
-                  //print("postId: " + postId);
-                  //String postId=post.getPostId();
                   return Column(
                     children: [
                       ListTile(
                         title: Text(
                           post.title ?? 'No Title',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
                             fontSize: 14.0,
                             fontWeight: FontWeight.bold,
@@ -66,6 +62,8 @@ class PostView extends StatelessWidget {
                           children: [
                             Text(
                               post.contents ?? '',
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
                                 fontSize: 14.0,
                                 color: Color(0xFFbac170F01),
@@ -77,7 +75,7 @@ class PostView extends StatelessWidget {
                                 Row(
                                   children: [
                                     Image.asset(
-                                      'assets/images/icon_number_of_like.png', // 좋아요 이미지 경로 설정
+                                      'assets/images/icon_number_of_like.png',
                                       width: 16,
                                       height: 16,
                                     ),
@@ -95,7 +93,7 @@ class PostView extends StatelessWidget {
                                 Row(
                                   children: [
                                     Image.asset(
-                                      'assets/images/icon_number_of_comments.png', // 좋아요 이미지 경로 설정
+                                      'assets/images/icon_number_of_comments.png',
                                       width: 16,
                                       height: 16,
                                     ),
@@ -121,7 +119,7 @@ class PostView extends StatelessWidget {
                               language: language,
                               likeCount: post.likeCount ?? 0,
                               commentCount: post.commentCount ?? 0,
-                              postId: postId ?? ''));
+                              postId: post.id ?? ''));
                         },
                       ),
                       // 구분선 추가

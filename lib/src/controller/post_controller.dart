@@ -6,10 +6,7 @@ import 'package:kideukkideuk_project/src/repository/post_repositroy.dart';
 class PostController extends GetxController {
   final PostRepository _postRepository = PostRepository();
   final RxList<Post> posts = <Post>[].obs;
-
-  //final Function() onStateChanged;
-
-  //PostController({required this.onStateChanged});
+  final RxInt commentCount = 0.obs;
 
   Future<void> fetchPosts(int boardId) async {
     List<Post> fetchedPosts = await _postRepository.getPostsByBoardId(boardId);
@@ -27,5 +24,9 @@ class PostController extends GetxController {
       print("게시물 작성자 아이디를 가져오는 데 실패했습니다.");
       return "실패";
     }
+  }
+
+  Future<void> fetchCommentCount({required String postId}) async {
+    commentCount.value = await _postRepository.addCommentCount(postId);
   }
 }

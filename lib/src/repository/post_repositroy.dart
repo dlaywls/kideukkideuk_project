@@ -1,10 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:kideukkideuk_project/src/models/post.dart';
+import 'package:kideukkideuk_project/src/repository/comment_repository.dart';
 import 'package:kideukkideuk_project/src/repository/user_repository.dart';
 
 class PostRepository {
   final CollectionReference _posts =
       FirebaseFirestore.instance.collection('posts');
+  final CommentRepository _commentRepository = CommentRepository();
   //게시글 등록하기
   void addPost({
     required String title,
@@ -86,6 +88,42 @@ class PostRepository {
     } catch (e) {
       print('게시물 작성자 아이디 가져오기 중 오류 발생: $e');
       return null;
+    }
+  }
+
+  // 특정 postId에 대한 댓글 개수 가져오기
+  Future<int> addCommentCount(String postId) async {
+    int commentCount = await _commentRepository.getCommentCountByPostId(postId);
+    DocumentReference postReference = _posts.doc(postId);
+    await postReference.update({
+      'comment_count': commentCount,
+    });
+    [print("comment count: $commentCount")];
+
+    return commentCount;
+  }
+
+  //boardId 가져오기
+  Future<int?> getBoardId({required String postId}) async {
+    try {
+      // 게시물 문서 참조 가져오기
+      DocumentReference postReference = _posts.doc(postId);
+
+      // 게시물 문서 가져오기
+      DocumentSnapshot postSnapshot = await postReference.get();
+
+      // 게시물이 존재하는지 확인 후 유저 아이디 반환
+      if (postSnapshot.exists) {
+        Map<String, dynamic>? postData =
+            postSnapshot.data() as Map<String, dynamic>?;
+        return postData?['board_id'];
+      } else {
+        print('게시물이 존재하지 않습니다.');
+        return 0;
+      }
+    } catch (e) {
+      print('게시물 작성자 아이디 가져오기 중 오류 발생: $e');
+      return 0;
     }
   }
 }
