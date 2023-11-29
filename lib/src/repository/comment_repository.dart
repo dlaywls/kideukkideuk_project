@@ -21,7 +21,6 @@ class CommentRepository {
     // 현재 사용자의 ID 얻어오기
     String? userId = await UserRepository.getCurrentUserId();
 
-    // 문서를 추가하면 Firestore에서 자동으로 고유한 ID를 생성하고 반환합니다.
     DocumentReference documentReference = await _comments.add({
       'contents': contents,
       'post_id': postId,
@@ -62,13 +61,11 @@ class CommentRepository {
 
   Future<int> getCommentCountByPostId(String postId) async {
     try {
-      // Use a query to count documents with a specific postId
       QuerySnapshot querySnapshot =
           await _comments.where('post_id', isEqualTo: postId).get();
-      // Return the number of documents
+
       return querySnapshot.size;
     } catch (e) {
-      // Handle any errors that might occur
       print("Error getting comment count by postId: $e");
       return 0;
     }

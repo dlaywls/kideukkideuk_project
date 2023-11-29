@@ -136,6 +136,30 @@ class PostRepository {
     return commentCount;
   }
 
+  //특정 postId에 대한 좋아요 수 가져오기
+  Future<int> addlikeCount(String postId) async {
+    try {
+      // 게시물 문서 참조 가져오기
+      DocumentReference postReference = _posts.doc(postId);
+
+      // 게시물 문서 가져오기
+      DocumentSnapshot postSnapshot = await postReference.get();
+
+      // 게시물이 존재하는지 확인 후 유저 아이디 반환
+      if (postSnapshot.exists) {
+        Map<String, dynamic>? postData =
+            postSnapshot.data() as Map<String, dynamic>?;
+        return postData?['like_count'];
+      } else {
+        print('게시물이 존재하지 않습니다.');
+        return 0;
+      }
+    } catch (e) {
+      print('좋아요 수 가져오기 중 오류 발생: $e');
+      return 0;
+    }
+  }
+
   //boardId 가져오기
   Future<int?> getBoardId({required String postId}) async {
     try {

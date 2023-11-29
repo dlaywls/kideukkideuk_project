@@ -19,17 +19,16 @@ class NotificationRepository {
         'receiver_id': receiverId,
         'contents': contents,
         'board_id': boardId,
-        'post_title': post.title ?? '', // post.title이 null이면 빈 문자열을 사용
-        'post_contents': post.contents ?? '', // post.contents가 null이면 빈 문자열을 사용
-        'like_count': post.likeCount ?? 0, // post.likeCount가 null이면 0을 사용
+        'post_title': post.title ?? '',
+        'post_contents': post.contents ?? '',
+        'like_count': post.likeCount ?? 0,
         'comment_count': post.commentCount ?? 0,
         'datetime': FieldValue.serverTimestamp(),
-        'postId': postId // post.commentCount가 null이면 0을 사용
+        'postId': postId
       });
+      print("repo likeCount: ${post.likeCount}");
     } catch (e) {
-      // Firestore 작업 중에 오류가 발생하면 예외를 처리합니다.
       print('알림을 추가하는 중 오류가 발생했습니다: $e');
-      // 예외 처리에 대한 추가적인 로직을 추가할 수 있습니다.
     }
   }
 

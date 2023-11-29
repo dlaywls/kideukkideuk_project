@@ -7,6 +7,7 @@ class PostController extends GetxController {
   final PostRepository _postRepository = PostRepository();
   final RxList<Post> posts = <Post>[].obs;
   final RxInt commentCounts = 0.obs;
+  final RxInt likeCount = 0.obs;
 
   Future<void> fetchPosts(int boardId) async {
     List<Post> fetchedPosts = await _postRepository.getPostsByBoardId(boardId);
@@ -28,5 +29,11 @@ class PostController extends GetxController {
 
   Future<void> fetchCommentCount({required String postId}) async {
     commentCounts.value = await _postRepository.addCommentCount(postId);
+  }
+
+  Future<int?> fetchLikeCount({required String postId}) async {
+    likeCount.value = await _postRepository.addlikeCount(postId);
+    print("like: ${likeCount.value}");
+    return likeCount.value;
   }
 }
