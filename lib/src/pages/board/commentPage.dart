@@ -37,31 +37,6 @@ class _CommentPageState extends State<CommentPage> {
   final UserRepository userRepository = UserRepository();
 
   TextEditingController textEditController = TextEditingController();
-  //String? userId; // userId를 상태 변수로 선언
-  //String nickname = "";
-
-  /*@override
-  void initState() {
-    super.initState();
-    // initState에서 userId를 초기화
-    _loadUserInfo();
-  }*/
-
-  // 비동기적으로 userId 및 nickname을 가져오는 함수
-  /*Future<void> _loadUserInfo() async {
-    userId = await postController.loadUserId(postId: widget.postId) as String?;
-    if (userId != null) {
-      print("userId: $userId");
-      nickname = await userRepository.getNicknameForUser(uid: userId) as String;
-      if (nickname != null) {
-        print("nickname: $nickname");
-      } else {
-        print("닉네임을 가져오는 데 실패했습니다.");
-      }
-    } else {
-      print("게시물 작성자 아이디를 가져오는 데 실패했습니다.");
-    }
-  }*/
 
   @override
   void initState() {
@@ -77,7 +52,7 @@ class _CommentPageState extends State<CommentPage> {
 
   void onAddCommentPressed(String contents, String postId) async {
     commentController.addComment(contents: contents, postId: postId); // 댓글을 추가
-    postController.fetchCommentCount(postId: postId);
+    await postController.fetchCommentCount(postId: postId);
     await commentController.fetchComments(postId: postId); // 댓글을 가져오고
     setState(() {});
   }
@@ -119,28 +94,28 @@ class _CommentPageState extends State<CommentPage> {
                   Row(
                     children: [
                       //프로필 정보
-                      Icon(Icons.person, size: 24),
+                      Icon(Icons.person, size: 30),
                       Text(
-                        '익명',
+                        '  익명',
                         style: const TextStyle(
-                          fontSize: 14,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color(0xFFF170F01),
                         ),
                       )
                     ],
-                  ).marginOnly(left: 8, top: 10),
+                  ).marginOnly(left: 8, top: 8, bottom: 8),
                   //제목
                   Text(widget.title,
                           style: const TextStyle(
-                              fontSize: 16,
+                              fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: Color(0xfff170f01)))
                       .marginOnly(left: 8, top: 12, bottom: 8),
                   //글 내용
                   Text(widget.content,
                           style: const TextStyle(
-                              fontSize: 12, color: Color(0xFFF170F01)))
+                              fontSize: 14, color: Color(0xFFF170F01)))
                       .marginOnly(left: 8, bottom: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -151,14 +126,13 @@ class _CommentPageState extends State<CommentPage> {
                         children: [
                           Image.asset(
                             'assets/images/icon_number_of_like.png', // 좋아요 이미지 경로 설정
-                            width: 16,
-                            height: 16,
+                            width: 25,
+                            height: 25,
                           ),
-                          const SizedBox(width: 2),
                           Text(
                             '${widget.likeCount ?? 0}',
                             style: const TextStyle(
-                              fontSize: 12.0,
+                              fontSize: 13.0,
                               color: Color(0xFFF56587),
                             ),
                           ),
@@ -170,10 +144,9 @@ class _CommentPageState extends State<CommentPage> {
                         children: [
                           Image.asset(
                             'assets/images/icon_number_of_comments.png', // 댓글 이미지 경로 설정
-                            width: 16,
-                            height: 16,
+                            width: 25,
+                            height: 25,
                           ),
-                          const SizedBox(width: 2),
                           Text(
                             '${widget.commentCount ?? 0}',
                             style: const TextStyle(
@@ -251,16 +224,37 @@ class _CommentPageState extends State<CommentPage> {
             // 댓글 리사이클러뷰
             Expanded(
               child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 8),
                 color: Colors.white,
                 child: ListView.builder(
                   itemCount: commentController.comments.length,
                   // 댓글 아이템 개수
                   itemBuilder: (context, index) {
                     Comment comment = commentController.comments[index];
-                    return ListTile(
-                      title: Text(comment.contents ?? ""),
-                      // Add other comment details as needed
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(Icons.person, size: 18),
+                            Text(
+                              '  익명',
+                              style: const TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFFF170F01),
+                              ),
+                            )
+                          ],
+                        ).marginOnly(left: 16, top: 8, right: 16, bottom: 0),
+                        ListTile(
+                          title: Text(comment.contents ?? ""),
+                          // Add other comment details as needed
+                        ).marginOnly(right: 3, left: 3, top: 0, bottom: 0),
+                        const Divider(
+                          color: Color(0xFFD6D6D6), // 구분선 색상
+                          thickness: 1, // 구분선 두께
+                        ).marginOnly(right: 16, left: 16, top: 0),
+                      ],
                     );
                   },
                 ),

@@ -6,12 +6,12 @@ import 'package:kideukkideuk_project/src/repository/post_repositroy.dart';
 class PostController extends GetxController {
   final PostRepository _postRepository = PostRepository();
   final RxList<Post> posts = <Post>[].obs;
-  final RxInt commentCount = 0.obs;
+  final RxInt commentCounts = 0.obs;
 
   Future<void> fetchPosts(int boardId) async {
     List<Post> fetchedPosts = await _postRepository.getPostsByBoardId(boardId);
     posts.assignAll(fetchedPosts);
-    print(posts.length);
+    print("글 개수: ${posts.length}");
   }
 
   Future<String> loadUserId({required String postId}) async {
@@ -27,6 +27,6 @@ class PostController extends GetxController {
   }
 
   Future<void> fetchCommentCount({required String postId}) async {
-    commentCount.value = await _postRepository.addCommentCount(postId);
+    commentCounts.value = await _postRepository.addCommentCount(postId);
   }
 }

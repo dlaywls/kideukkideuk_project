@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kideukkideuk_project/src/controller/auth_controller.dart';
 import 'package:kideukkideuk_project/src/controller/notification_controller.dart';
-import 'package:kideukkideuk_project/src/pages/board/commentPage.dart';
 import 'package:kideukkideuk_project/src/models/notification.dart'
     // ignore: library_prefixes
     as ProjectNotification;
+import 'package:kideukkideuk_project/src/pages/board/commentPage.dart';
+import 'package:kideukkideuk_project/src/pages/board/postPage.dart';
 
 class Alarm extends StatelessWidget {
   Alarm({Key? key}) : super(key: key);
@@ -128,16 +129,18 @@ class Alarm extends StatelessWidget {
 
                         // 각 항목을 눌렀을 때 해당 항목의 세부 페이지로 이동
                         onTap: () {
+                          print("postId: ${notification.postId}");
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => CommentPage(
-                                  title: "알람이다.",
-                                  content: "알람이다.",
-                                  language: "한국어",
-                                  likeCount: 0,
-                                  commentCount: 0,
-                                  postId: ""),
+                                  title: notification.postTitle ?? "",
+                                  content: notification.postContents ?? "",
+                                  language: language,
+                                  likeCount: notification.postLikeCount ?? 0,
+                                  commentCount:
+                                      notification.postCommentCount ?? 0,
+                                  postId: notification.postId ?? ""),
                             ),
                           );
                         },

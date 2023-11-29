@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:kideukkideuk_project/src/models/comment.dart';
+import 'package:kideukkideuk_project/src/models/post.dart';
 import 'package:kideukkideuk_project/src/repository/nofitication_repository.dart';
 import 'package:kideukkideuk_project/src/repository/post_repositroy.dart';
 import 'package:kideukkideuk_project/src/repository/user_repository.dart';
@@ -12,7 +13,7 @@ class CommentRepository {
       new NotificationRepository();
   late final PostRepository postRepository = new PostRepository();
 
-  //게시글 등록하기
+  //댓글 등록하기
   Future<void> addComment({
     required String contents,
     required String postId,
@@ -24,25 +25,29 @@ class CommentRepository {
     DocumentReference documentReference = await _comments.add({
       'contents': contents,
       'post_id': postId,
-      'user_id': userId // 현재 사용자의 ID 추가
+      'user_id': userId,
+      'datetime': FieldValue.serverTimestamp(),
     });
 
-    String? receiverId = await postRepository.getPostUserId(postId: postId);
     int? boardId = await postRepository.getBoardId(postId: postId);
+    Post? post = await postRepository.getPostsByPostId(postId);
 
     notificationRepository.addNotification(
-      receiverId: receiverId ?? "",
-      contents: contents ?? "",
-      boardId: boardId ?? 14,
-    ); //알람에 추가.
+        receiverId: post?.userId ?? "",
+        contents: contents ?? "",
+        boardId: boardId ?? 14,
+        post: post ?? Post(),
+        postId: postId ?? ""); //알람에 추가.
   }
 
   //댓글 보여주기
   Future<List<Comment>> getCommentsByPostId(String postId) async {
     try {
       // boardId와 일치하는 post 문서들을 가져오기 위한 쿼리
-      QuerySnapshot querySnapshot =
-          await _comments.where('post_id', isEqualTo: postId).get();
+      QuerySnapshot querySnapshot = await _comments
+          .where('post_id', isEqualTo: postId)
+          .orderBy('datetime', descending: true)
+          .get();
 
       // QuerySnapshot으로부터 문서들을 가져와 List<Post>로 변환합니다.
       List<Comment> comments =
