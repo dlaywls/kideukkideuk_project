@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class Comment {
   final String? id;
   final String? contents;
-  final DateTime? datetime;
+  final Timestamp? datetime;
   final String? postId;
   final String? userId;
 
@@ -14,9 +14,7 @@ class Comment {
     return Comment(
       id: doc.id,
       contents: data['contents'] == null ? '' : data['contents'] as String,
-      datetime: data['datetime'] == null
-          ? DateTime.now()
-          : DateTime.parse(data['datetime'] as String),
+      datetime: data['datetime'] ?? Timestamp.now(),
       postId: data['post_id'] ?? '',
       userId: data['userId'] == null ? '' : data['userId'] as String,
     );

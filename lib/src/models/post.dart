@@ -4,7 +4,7 @@ class Post {
   final String? id;
   final String? title;
   final String? contents;
-  final DateTime? dateTime;
+  final Timestamp? datetime;
   final int? boardId;
   final String? userId;
   final int? likeCount;
@@ -14,7 +14,7 @@ class Post {
       {this.id,
       this.title,
       this.contents,
-      this.dateTime,
+      this.datetime,
       this.boardId,
       this.userId,
       this.likeCount,
@@ -26,9 +26,7 @@ class Post {
       id: doc.id,
       title: data['title'] == null ? '' : data['title'] as String,
       contents: data['contents'] == null ? '' : data['contents'] as String,
-      dateTime: data['datetime'] == null
-          ? DateTime.now()
-          : DateTime.parse(data['datetime'] as String),
+      datetime: data['datetime'] ?? Timestamp.now(),
       boardId: data['board_id'] ?? '',
       userId: data['userId'] == null ? '' : data['userId'] as String,
       likeCount: data['like_count'] ?? 0,
@@ -40,7 +38,7 @@ class Post {
     return {
       'title': title,
       'contents': contents,
-      'datetime': dateTime?.toUtc().toIso8601String(),
+      'datetime': datetime,
       'board_id': boardId,
       'userId': userId,
       'like_count': likeCount,
@@ -54,14 +52,14 @@ class Post {
       String? title,
       String? contents,
       int? boardId,
-      DateTime? dateTime,
+      Timestamp? datetime,
       int? likeCount,
       int? commentCount}) {
     return Post(
         id: id ?? this.id,
         title: title ?? this.title,
         contents: contents ?? this.contents,
-        dateTime: dateTime ?? this.dateTime,
+        datetime: datetime ?? this.datetime,
         boardId: boardId ?? this.boardId,
         userId: userId ?? this.userId,
         likeCount: likeCount ?? this.likeCount,

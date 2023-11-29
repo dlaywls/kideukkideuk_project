@@ -12,7 +12,7 @@ class CommnetController extends GetxController {
     List<Comment> fetchedComments =
         await _commentRepository.getCommentsByPostId(postId);
     comments.assignAll(fetchedComments);
-    print(comments.length);
+    print("댓글 수: ${comments.length}");
   }
 
   //댓글 추가
