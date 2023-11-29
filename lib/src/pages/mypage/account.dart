@@ -1,28 +1,3 @@
-/*
-import 'package:flutter/material.dart';
-
-class Account extends StatelessWidget {
-  final String edit;
-
-  const Account({Key? key, required this.edit}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white, // 배경색을 흰색으로 설정
-      child: const Center(
-        child: Text(
-          '안녕~~',
-          style: TextStyle(
-            fontSize: 20, // 글씨 크기
-            color: Colors.black, // 글씨 색상
-          ),
-        ),
-      ),
-    );
-  }
-}
-*/
 import 'package:flutter/material.dart';
 
 class Account extends StatefulWidget {
@@ -82,7 +57,9 @@ class _AccountState extends State<Account> {
             // 저장 버튼
             ElevatedButton(
               onPressed: () {
-                // TODO: 여기에 이메일 저장 로직 추가
+                // 이메일 저장 로직 추가해야함...
+
+                
                 String newEmail = _emailController.text;
                 // 저장 후 페이지 이동 또는 다른 작업 수행
                 // 예를 들어 Navigator.pop(context)로 현재 페이지로 돌아갈 수 있습니다.
