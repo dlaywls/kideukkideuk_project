@@ -4,8 +4,8 @@ import 'package:kideukkideuk_project/src/controller/bottom_nav_controller.dart';
 import 'package:kideukkideuk_project/src/components/image_data.dart';
 import 'package:kideukkideuk_project/src/pages/alarm.dart';
 import 'package:kideukkideuk_project/src/pages/board/board.dart';
+import 'package:kideukkideuk_project/src/pages/home/home1.dart';
 import 'package:kideukkideuk_project/src/pages/mypage/mypage.dart';
-import 'package:kideukkideuk_project/src/pages/home.dart';
 
 class App extends GetView<BottomNavController> {
   const App({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class App extends GetView<BottomNavController> {
           body: IndexedStack(
             index: controller.pageIndex.value,
             children: [
-              const Home(),
+              const Home1(),
               Container(
                 child: const Center(child: Text('SEARCH')),
               ),
@@ -40,12 +40,12 @@ class App extends GetView<BottomNavController> {
             // label 없이 아이콘만 보여주기
             showSelectedLabels: true,
             showUnselectedLabels: true,
-            selectedLabelStyle: TextStyle(
-              color: Color(0x402A05),
+            selectedLabelStyle: const TextStyle(
+              color: Color(0x00402a05),
               fontSize: 10, // 선택된 텍스트 색상
             ),
-            unselectedLabelStyle: TextStyle(
-              color: Color(0x9E9E9E),
+            unselectedLabelStyle: const TextStyle(
+              color: Color(0x009e9e9e),
               fontSize: 10, // 선택되지 않은 텍스트 색상
             ),
 

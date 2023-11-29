@@ -20,7 +20,7 @@ class Mypage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: Color(0xFF241701),
               ),
-            ).paddingOnly(top: 5, left: 10),
+            ).paddingOnly( left: 10),
           ]
         ),
       ),
@@ -31,15 +31,15 @@ class Mypage extends StatelessWidget {
 
             // 프로필
             Container(
-              height: 100,
+              height: 90,
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xFFD2D2D2)),
+                border: Border.all(color: const Color(0xFFD2D2D2)),
                 borderRadius: BorderRadius.circular(17),
               ),
               margin: const EdgeInsets.only(top: 15, right: 20, left: 20),
               child: Row(
                 children: [
-                  Container(
+                  SizedBox(
                     width: 60, // 이미지의 너비
                     height: 60, // 이미지의 높이
                     child: ClipRRect(
@@ -85,12 +85,12 @@ class Mypage extends StatelessWidget {
 
             // 계정
             Container(
-              height: 175,
+              height: 170,
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xFFD2D2D2)),
+                border: Border.all(color: const Color(0xFFD2D2D2)),
                 borderRadius: BorderRadius.circular(17),
               ),
-              margin: const EdgeInsets.only(top: 15, right: 20, left: 20),
+              margin: const EdgeInsets.only(top: 13, right: 20, left: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -101,10 +101,10 @@ class Mypage extends StatelessWidget {
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
-                  ).paddingOnly(top: 10, left: 15),
+                  ).paddingOnly(top: 15, left: 15),
                   Expanded(
                     child: ListView.builder(
-                      physics: ClampingScrollPhysics(),
+                      physics: const ClampingScrollPhysics(),
                       itemCount: 3,
                       itemExtent: 40,
                       itemBuilder: (context, index) {
@@ -150,13 +150,14 @@ class Mypage extends StatelessWidget {
             ),
 
             // 앱
+
             Container(
-              height: 135,
+              height: 130,
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xFFD2D2D2)),
+                border: Border.all(color: const Color(0xFFD2D2D2)),
                 borderRadius: BorderRadius.circular(17),
               ),
-              margin: const EdgeInsets.only(top: 15, right: 20, left: 20),
+              margin: const EdgeInsets.only(top: 13, right: 20, left: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -167,10 +168,10 @@ class Mypage extends StatelessWidget {
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
-                  ).paddingOnly(top: 10, left: 15),
+                  ).paddingOnly(top: 15, left: 15),
                   Expanded(
                     child: ListView.builder(
-                      physics: ClampingScrollPhysics(),
+                      physics: const ClampingScrollPhysics(),
                       itemCount: 2,
                       itemExtent: 40,
                       itemBuilder: (context, index) {
@@ -212,14 +213,19 @@ class Mypage extends StatelessWidget {
               ),
             ),
 
+
+
+
+
+
             // 이용안내 (비효율적. switch 없애보기)
             Container(
-              height: 95,
+              height: 90,
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xFFD2D2D2)),
+                border: Border.all(color: const Color(0xFFD2D2D2)),
                 borderRadius: BorderRadius.circular(17),
               ),
-              margin: const EdgeInsets.only(top: 15, right: 20, left: 20),
+              margin: const EdgeInsets.only(top: 13, right: 20, left: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -230,10 +236,10 @@ class Mypage extends StatelessWidget {
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
-                  ).paddingOnly(top: 10, left: 15),
+                  ).paddingOnly(top: 15, left: 15),
                   Expanded(
                     child: ListView.builder(
-                      physics: ClampingScrollPhysics(),
+                      physics: const ClampingScrollPhysics(),
                       itemCount: 1,
                       itemExtent: 40,
                       itemBuilder: (context, index) {
@@ -274,12 +280,12 @@ class Mypage extends StatelessWidget {
 
             // 기타
             Container(
-              height: 135,
+              height: 130,
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xFFD2D2D2)),
+                border: Border.all(color: const Color(0xFFD2D2D2)),
                 borderRadius: BorderRadius.circular(17),
               ),
-              margin: const EdgeInsets.only(top: 15, right: 20, left: 20),
+              margin: const EdgeInsets.only(top: 13, right: 20, left: 20, bottom: 13),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -290,10 +296,10 @@ class Mypage extends StatelessWidget {
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
-                  ).paddingOnly(top: 10, left: 15),
+                  ).paddingOnly(top: 15, left: 15),
                   Expanded(
                     child: ListView.builder(
-                      physics: ClampingScrollPhysics(),
+                      physics: const ClampingScrollPhysics(),
                       itemCount: 2,
                       itemExtent: 40,
                       itemBuilder: (context, index) {

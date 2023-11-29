@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kideukkideuk_project/src/app.dart';
 import 'package:kideukkideuk_project/src/controller/auth_controller.dart';
 import 'package:kideukkideuk_project/src/models/kideuk_user.dart';
 
@@ -22,6 +21,7 @@ class _SignupPageState extends State<SignupPage> {
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,

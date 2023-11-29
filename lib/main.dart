@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:kideukkideuk_project/root.dart';
-import 'package:kideukkideuk_project/src/app.dart';
 import 'package:kideukkideuk_project/src/binding/init_bindings.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';

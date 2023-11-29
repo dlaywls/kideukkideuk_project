@@ -1,48 +1,23 @@
-/*
 import 'package:flutter/material.dart';
 
-class Account extends StatelessWidget {
+class Nickname extends StatefulWidget {
   final String edit;
 
-  const Account({Key? key, required this.edit}) : super(key: key);
+  const Nickname({Key? key, required this.edit}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white, // 배경색을 흰색으로 설정
-      child: const Center(
-        child: Text(
-          '안녕~~',
-          style: TextStyle(
-            fontSize: 20, // 글씨 크기
-            color: Colors.black, // 글씨 색상
-          ),
-        ),
-      ),
-    );
-  }
-}
-*/
-import 'package:flutter/material.dart';
-
-class Account extends StatefulWidget {
-  final String edit;
-
-  const Account({Key? key, required this.edit}) : super(key: key);
-
-  @override
-  _AccountState createState() => _AccountState();
+  _NicknameState createState() => _NicknameState();
 }
 
-class _AccountState extends State<Account> {
-  TextEditingController _emailController = TextEditingController();
+class _NicknameState extends State<Nickname> {
+  TextEditingController _nicknameController = TextEditingController();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    // 이메일을 현재 이메일로 미리 채우기
-    _emailController.text = 'kideukideuk@gmail.com';
+    // 닉네임을 현재 닉네임으로 미리 채우기
+    _nicknameController.text = '키득이';
   }
 
   void _showSnackBar(String message) {
@@ -62,9 +37,9 @@ class _AccountState extends State<Account> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // 기존 이메일 표시
+            // 기존 닉네임 표시
             Text(
-              '현재 이메일: kideukideuk@gmail.com',
+              '현재 닉네임: 키득이',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -73,9 +48,9 @@ class _AccountState extends State<Account> {
             SizedBox(height: 20),
             // 수정 가능한 텍스트 필드
             TextField(
-              controller: _emailController,
+              controller: _nicknameController,
               decoration: InputDecoration(
-                labelText: '새 이메일',
+                labelText: '새 닉네임',
               ),
             ),
             SizedBox(height: 20),
@@ -83,11 +58,11 @@ class _AccountState extends State<Account> {
             ElevatedButton(
               onPressed: () {
                 // TODO: 여기에 이메일 저장 로직 추가
-                String newEmail = _emailController.text;
+                String newNickname = _nicknameController.text;
                 // 저장 후 페이지 이동 또는 다른 작업 수행
                 // 예를 들어 Navigator.pop(context)로 현재 페이지로 돌아갈 수 있습니다.
                 Navigator.pop(context); // 현재 페이지 닫기
-                _showSnackBar('이메일이 변경되었습니다.');
+                _showSnackBar('닉네임이 변경되었습니다.');
               },
               child: Text('저장'),
             ),
