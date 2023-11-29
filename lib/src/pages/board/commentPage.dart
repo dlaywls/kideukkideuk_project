@@ -47,6 +47,8 @@ class _CommentPageState extends State<CommentPage> {
   // 댓글을 불러오는 함수
   void loadComments() async {
     await commentController.fetchComments(postId: widget.postId);
+    widget.likeCount =
+        (await postController.fetchLikeCount(postId: widget.postId))!;
     setState(() {});
   }
 

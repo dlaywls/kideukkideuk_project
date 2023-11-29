@@ -6,7 +6,6 @@ import 'package:kideukkideuk_project/src/models/notification.dart'
     // ignore: library_prefixes
     as ProjectNotification;
 import 'package:kideukkideuk_project/src/pages/board/commentPage.dart';
-import 'package:kideukkideuk_project/src/pages/board/postPage.dart';
 
 class Alarm extends StatelessWidget {
   Alarm({Key? key}) : super(key: key);
@@ -18,7 +17,6 @@ class Alarm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     _notificationController.fetchNotifications();
-
     return Scaffold(
       appBar: null,
       body: Column(
@@ -129,7 +127,7 @@ class Alarm extends StatelessWidget {
 
                         // 각 항목을 눌렀을 때 해당 항목의 세부 페이지로 이동
                         onTap: () {
-                          print("postId: ${notification.postId}");
+                          print("likeCount: ${notification.postLikeCount}");
                           Navigator.push(
                             context,
                             MaterialPageRoute(
