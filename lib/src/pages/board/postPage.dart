@@ -54,7 +54,7 @@ class PostView extends StatelessWidget {
                           style: const TextStyle(
                             fontSize: 14.0,
                             fontWeight: FontWeight.bold,
-                            color: Color(0xFFbac170F01),
+                            color: Color(0xffbac170f01),
                           ),
                         ).marginOnly(left: 5, top: 13),
                         subtitle: Column(
@@ -66,7 +66,7 @@ class PostView extends StatelessWidget {
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
                                 fontSize: 14.0,
-                                color: Color(0xFFbac170F01),
+                                color: Color(0xffbac170f01),
                               ),
                             ).marginOnly(left: 5, top: 5),
                             Row(

@@ -7,7 +7,7 @@ class WritePage extends StatefulWidget {
   final int boardId;
   final String language;
 
-  WritePage({Key? key, required this.boardId, required this.language})
+  const WritePage({Key? key, required this.boardId, required this.language})
       : super(key: key);
 
   @override

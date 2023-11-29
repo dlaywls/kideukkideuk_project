@@ -1,6 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:kideukkideuk_project/src/components/avatar_widget.dart';
 import 'package:kideukkideuk_project/src/components/image_data.dart';
 
@@ -54,8 +52,8 @@ class PostWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
       child: ClipRRect(
-        child: Image.asset('assets/images/1.jpg'),
         borderRadius: BorderRadius.circular(15.0),
+        child: Image.asset('assets/images/1.jpg'),
       ),
     );
   }

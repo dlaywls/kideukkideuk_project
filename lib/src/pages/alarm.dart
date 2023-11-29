@@ -102,7 +102,7 @@ class Alarm extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(
-                                color: Color(0xFFD4D4D4), // 테두리 색상
+                                color: const Color(0xFFD4D4D4), // 테두리 색상
                                 width: 1.0, // 테두리 두께
                               ),
                             ),

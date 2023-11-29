@@ -30,7 +30,7 @@ class Board extends StatelessWidget {
           Expanded(
             child: Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xFFD2D2D2)), // 테두리 속성
+                border: Border.all(color: const Color(0xFFD2D2D2)), // 테두리 속성
                 borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(17),
                     topRight: Radius.circular(17)), // 테두리의 모서리를 둥글게

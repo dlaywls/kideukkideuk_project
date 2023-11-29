@@ -25,7 +25,7 @@ class Home extends StatelessWidget {
   Widget _infoBox() {
     return Container(
       decoration: BoxDecoration(
-      border: Border.all(color: Color(0xFFD2D2D2)), // 테두리 속성
+      border: Border.all(color: const Color(0xFFD2D2D2)), // 테두리 속성
       borderRadius: BorderRadius.circular(17), // 테두리의 모서리를 둥글게
       ),
       margin: const EdgeInsets.all(20),  
@@ -40,7 +40,7 @@ class Home extends StatelessWidget {
   // 중간 게시글 세로 스크롤 리스트
   Widget _postList() {
     return Column(
-      children: List.generate(50, (index) => PostWidget()).toList(),
+      children: List.generate(5, (index) => const PostWidget()).toList(),
     );
   }
 
