@@ -57,7 +57,9 @@ class _NicknameState extends State<Nickname> {
             // 저장 버튼
             ElevatedButton(
               onPressed: () {
-                // TODO: 여기에 이메일 저장 로직 추가
+                // 닉네임 저장 로직 추가 해야함
+
+
                 String newNickname = _nicknameController.text;
                 // 저장 후 페이지 이동 또는 다른 작업 수행
                 // 예를 들어 Navigator.pop(context)로 현재 페이지로 돌아갈 수 있습니다.

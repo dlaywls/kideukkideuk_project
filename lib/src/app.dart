@@ -5,6 +5,7 @@ import 'package:kideukkideuk_project/src/components/image_data.dart';
 import 'package:kideukkideuk_project/src/pages/alarm.dart';
 import 'package:kideukkideuk_project/src/pages/board/board.dart';
 import 'package:kideukkideuk_project/src/pages/home/home1.dart';
+import 'package:kideukkideuk_project/src/pages/information/inform.dart';
 import 'package:kideukkideuk_project/src/pages/mypage/mypage.dart';
 
 class App extends GetView<BottomNavController> {
@@ -21,18 +22,10 @@ class App extends GetView<BottomNavController> {
             index: controller.pageIndex.value,
             children: [
               const Home1(),
-              Container(
-                child: const Center(child: Text('SEARCH')),
-              ),
+              const Inform(),
               const Board(),
               Alarm(),
               const Mypage(),
-              /*Container(
-                child: const Center(child: Text('ACTIVITY')),
-              ),
-              Container(
-                child: const Center(child: Text('MYPAGE')),
-              ),*/
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
