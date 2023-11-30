@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kideukkideuk_project/src/components/image_data.dart';
 import 'package:kideukkideuk_project/src/components/post_widget.dart';
+import 'package:kideukkideuk_project/src/pages/home/health.dart';
+import 'package:kideukkideuk_project/src/pages/home/univ.dart';
+import 'package:kideukkideuk_project/src/pages/home/work.dart';
 
 class Home1 extends StatelessWidget {
   const Home1({Key? key}) : super (key: key);
   
+  /*
   // 정보 바로보기
   Widget _infoBox() {
     return Container(
@@ -14,7 +18,7 @@ class Home1 extends StatelessWidget {
         border: Border.all(color: const Color(0xFFD2D2D2)),
         borderRadius: BorderRadius.circular(17),
       ),
-      margin: const EdgeInsets.only(right: 20, left: 20, bottom: 10),
+      margin: const EdgeInsets.only(right: 20, left: 20, bottom: 5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -66,6 +70,106 @@ class Home1 extends StatelessWidget {
       ),
     );
   }
+  
+  */
+
+  // 정보 바로보기
+  Widget _infoBox(BuildContext context) {
+    return Container(
+      height: 170,
+      decoration: BoxDecoration(
+        border: Border.all(color: const Color(0xFFD2D2D2)),
+        borderRadius: BorderRadius.circular(17),
+      ),
+      margin: const EdgeInsets.only(right: 20, left: 20, bottom: 5),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            '정보 바로보기',
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
+          ).paddingOnly(top: 15, left: 15, bottom: 20),
+         
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              // 노동
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(
+                      builder: (context) => Work()
+                    ),
+                  );
+                },
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.grey[200],
+                      radius: 30,
+                      child: Image.asset('assets/images/home_work.png'),
+                    ).paddingOnly(bottom: 10),
+                    const Text('노동'),
+                  ],
+                ),
+              ),
+
+              // 의료
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(
+                      builder: (context) => Health()
+                    ),
+                  );
+                },
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.grey[200],
+                      radius: 30,
+                      child: Image.asset('assets/images/home_health.png'),
+                    ).paddingOnly(bottom: 10),
+                    const Text('의료'),
+                  ],
+                ),
+              ),
+
+              // 대학생활
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(
+                      builder: (context) => Univ()
+                    ),
+                  );
+                },
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.grey[200],
+                      radius: 30,
+                      child: Image.asset('assets/images/home_univ.png'),
+                    ).paddingOnly(bottom: 10),
+                    const Text('대학생활'),
+                  ],
+                ),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+  
+  
   // 게시글 세로 스크롤 리스트
   Widget _postList() {
     return Column(
@@ -146,12 +250,12 @@ class Home1 extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: Color(0xFF52B160),
             ),
-          ).paddingOnly(top: 8, left: 20, bottom: 30),
+          ).paddingOnly(top: 8, left: 20, bottom: 20),
           
           
           //_storyBoardList(),
           //_hello(),
-          _infoBox(),
+          _infoBox(context),
           
           _postList(),
         ],
