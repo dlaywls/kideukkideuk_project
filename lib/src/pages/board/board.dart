@@ -19,14 +19,14 @@ class Board extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: Color(0xFF241701),
             ),
-          ).paddingOnly(top: 40, left: 30),
+          ).paddingOnly(top: 50, left: 30),
           const Text(
             '각 나라의 언어별로 나누어져 있습니다.',
             style: TextStyle(
               fontSize: 14,
               color: Color(0xFF505050),
             ),
-          ).paddingOnly(top: 8, left: 30),
+          ).paddingOnly(top: 4, left: 30),
           Expanded(
             child: Container(
               decoration: BoxDecoration(

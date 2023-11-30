@@ -37,52 +37,14 @@ class IconsPath {
       'assets/images/icon_commnet_notification.png';
   static String get likeButton => 'assets/images/icon_like_button.png';
   static String get commentSendButton =>
-      'assets/images/button_send_comment.png'; //여기까지 키득키득 이미지 파일
-
-  static String get directMessage => 'assets/images/direct_msg_icon.jpg';
-  static String get plusIcon => 'assets/images/plus_icon.png';
+      'assets/images/button_send_comment.png';
+  static String get linkIcon1 => 'assets/images/icon_link_1.png';
+  static String get linkIcon2 => 'assets/images/icon_link_2.png';
+  static String get linkIcon3 => 'assets/images/icon_link_3.png';
+  static String get linkIcon4 => 'assets/images/icon_link_4.png';
+  static String get linkIcon5 =>
+      'assets/images/arrow_button.png'; //여기까지 키득키득 이미지 파일
   static String get postMoreIcon => 'assets/images/more_icon.jpg';
-  static String get likeOffIcon => 'assets/images/like_off_icon.jpg';
-  static String get likeOnIcon => 'assets/images/like_on_icon.jpg';
-  static String get replyIcon => 'assets/images/reply_icon.jpg';
-  static String get bookMarkOffIcon => 'assets/images/book_mark_off_icon.jpg';
-  static String get bookMarkOnIcon => 'assets/images/book_mark_on_icon.jpg';
-  static String get backBtnIcon => 'assets/images/back_icon.jpg';
-  static String get menuIcon => 'assets/images/menu_icon.jpg';
-  static String get addFriend => 'assets/images/add_friend_icon.jpg';
-  static String get gridViewOff => 'assets/images/grid_view_off_icon.jpg';
-  static String get gridViewOn => 'assets/images/grid_view_on_icon.jpg';
-  static String get myTagImageOff => 'assets/images/my_tag_image_off_icon.jpg';
-  static String get myTagImageOn => 'assets/images/my_tag_image_on_icon.jpg';
-  static String get nextImage => 'assets/images/upload_next_icon.jpg';
-  static String get closeImage => 'assets/images/close_icon.jpg';
-  static String get imageSelectIcon => 'assets/images/image_select_icon.jpg';
-  static String get cameraIcon => 'assets/images/camera_icon.jpg';
-  static String get uploadComplete => 'assets/images/upload_complete_icon.jpg';
-  static String get mypageBottomSheet01 =>
-      'assets/images/mypage_bottom_sheet_01.jpg';
-  static String get mypageBottomSheet02 =>
-      'assets/images/mypage_bottom_sheet_02.jpg';
-  static String get mypageBottomSheet03 =>
-      'assets/images/mypage_bottom_sheet_03.jpg';
-  static String get mypageBottomSheet04 =>
-      'assets/images/mypage_bottom_sheet_04.jpg';
-  static String get mypageBottomSheet05 =>
-      'assets/images/mypage_bottom_sheet_05.jpg';
-  static String get mypageBottomSheetSetting01 =>
-      'assets/images/mypage_bottom_sheet_setting_01.jpg';
-  static String get mypageBottomSheetSetting02 =>
-      'assets/images/mypage_bottom_sheet_setting_02.jpg';
-  static String get mypageBottomSheetSetting03 =>
-      'assets/images/mypage_bottom_sheet_setting_03.jpg';
-  static String get mypageBottomSheetSetting04 =>
-      'assets/images/mypage_bottom_sheet_setting_04.jpg';
-  static String get mypageBottomSheetSetting05 =>
-      'assets/images/mypage_bottom_sheet_setting_05.jpg';
-  static String get mypageBottomSheetSetting06 =>
-      'assets/images/mypage_bottom_sheet_setting_06.jpg';
-  static String get mypageBottomSheetSetting07 =>
-      'assets/images/mypage_bottom_sheet_setting_07.jpg';
 
   static String get homeSearch => 'assets/images/home_button_search.png';
   static String get tapHomeOn => 'assets/images/tap_home.png';
