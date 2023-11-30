@@ -108,7 +108,7 @@ class Alarm extends StatelessWidget {
                           ),
                         ),
                         title: Text(
-                          '[ ${language} 게시판 ]',
+                          '[ $language 게시판 ]',
                           style: const TextStyle(
                             fontSize: 14.0,
                             fontWeight: FontWeight.w900,

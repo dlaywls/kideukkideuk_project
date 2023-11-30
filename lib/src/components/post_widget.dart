@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kideukkideuk_project/src/components/avatar_widget.dart';
 import 'package:kideukkideuk_project/src/components/image_data.dart';
+import 'package:flutter_swiper_view/flutter_swiper_view.dart';
+
+final List<String> imgList = [
+  "assets/cards/work/1.jpg",
+  "assets/cards/work/2.jpg",
+  "assets/cards/work/3.jpg",
+  "assets/cards/work/4.jpg",
+];
+
 
 class PostWidget extends StatelessWidget {
   const PostWidget({Key? key}) : super (key: key);
@@ -24,7 +32,7 @@ class PostWidget extends StatelessWidget {
               const Text(
                 '노동정보',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
@@ -48,24 +56,17 @@ class PostWidget extends StatelessWidget {
   }
 
   Widget _image() {
-    /*
-    return ImageData(
-      IconsPath.profileImage,
-      size: 100
-    );
-
-    
-    //return Image.asset('assets/images/1.jpg');
-    return ClipRRect(
-      child: Image.asset('assets/images/1.jpg'),
-      borderRadius: BorderRadius.circular(20.0),
-    );
-    */
-    return Container(
-      margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(15.0),
-        child: Image.asset('assets/images/1.jpg'),
+    return SizedBox(
+      height: 365,
+      child: Swiper(
+        itemCount: imgList.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Image.asset(imgList[index], fit: BoxFit.contain);
+        },
+        pagination: const SwiperPagination(),
+        control: const SwiperControl(),
+        scrollDirection: Axis.horizontal,
+        loop: false,
       ),
     );
   }

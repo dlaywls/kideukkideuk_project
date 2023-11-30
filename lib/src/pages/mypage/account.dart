@@ -10,7 +10,7 @@ class Account extends StatefulWidget {
 }
 
 class _AccountState extends State<Account> {
-  TextEditingController _emailController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -38,22 +38,22 @@ class _AccountState extends State<Account> {
         child: Column(
           children: [
             // 기존 이메일 표시
-            Text(
+            const Text(
               '현재 이메일: kideukideuk@gmail.com',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // 수정 가능한 텍스트 필드
             TextField(
               controller: _emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: '새 이메일',
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // 저장 버튼
             ElevatedButton(
               onPressed: () {
@@ -66,7 +66,7 @@ class _AccountState extends State<Account> {
                 Navigator.pop(context); // 현재 페이지 닫기
                 _showSnackBar('이메일이 변경되었습니다.');
               },
-              child: Text('저장'),
+              child: const Text('저장'),
             ),
           ],
         ),

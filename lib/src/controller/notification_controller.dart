@@ -2,7 +2,6 @@ import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:kideukkideuk_project/src/models/notification.dart';
 import 'package:kideukkideuk_project/src/repository/nofitication_repository.dart';
-import 'package:kideukkideuk_project/src/repository/post_repositroy.dart';
 import 'package:kideukkideuk_project/src/repository/user_repository.dart';
 
 class NotificationController extends GetxController {

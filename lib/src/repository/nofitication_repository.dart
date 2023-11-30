@@ -48,7 +48,7 @@ class NotificationRepository {
           .toList();
 
       print("알람 수: ${notifications.length}");
-      print("사용자 아이디: ${receiverId}");
+      print("사용자 아이디: $receiverId");
       return notifications;
     } catch (e) {
       // 에러가 발생할 경우 예외를 처리합니다.

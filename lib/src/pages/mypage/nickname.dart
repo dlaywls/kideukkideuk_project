@@ -10,7 +10,7 @@ class Nickname extends StatefulWidget {
 }
 
 class _NicknameState extends State<Nickname> {
-  TextEditingController _nicknameController = TextEditingController();
+  final TextEditingController _nicknameController = TextEditingController();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -38,22 +38,22 @@ class _NicknameState extends State<Nickname> {
         child: Column(
           children: [
             // 기존 닉네임 표시
-            Text(
+            const Text(
               '현재 닉네임: 키득이',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // 수정 가능한 텍스트 필드
             TextField(
               controller: _nicknameController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: '새 닉네임',
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // 저장 버튼
             ElevatedButton(
               onPressed: () {
@@ -66,7 +66,7 @@ class _NicknameState extends State<Nickname> {
                 Navigator.pop(context); // 현재 페이지 닫기
                 _showSnackBar('닉네임이 변경되었습니다.');
               },
-              child: Text('저장'),
+              child: const Text('저장'),
             ),
           ],
         ),
