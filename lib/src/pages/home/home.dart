@@ -100,7 +100,7 @@ class Home extends StatelessWidget {
           
           //_storyBoardList(),
           //_hello(),
-          //_infoBox(),
+          _infoBox(),
           _postList(),
         ],
       ),

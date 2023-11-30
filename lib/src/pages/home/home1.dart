@@ -7,14 +7,14 @@ class Home1 extends StatelessWidget {
   const Home1({Key? key}) : super (key: key);
   
   // 정보 바로보기
-  Widget _infoBox(BuildContext context) {
+  Widget _infoBox() {
     return Container(
       height: 170,
       decoration: BoxDecoration(
         border: Border.all(color: const Color(0xFFD2D2D2)),
         borderRadius: BorderRadius.circular(17),
       ),
-      margin: const EdgeInsets.only(right: 20, left: 20, bottom: 20),
+      margin: const EdgeInsets.only(right: 20, left: 20, bottom: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -26,7 +26,73 @@ class Home1 extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ).paddingOnly(top: 15, left: 15, bottom: 20),
+/*
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.asset(
+                'assets/images/home_work.png',
+                width: 60,
+              ),
+              Image.asset(
+                'assets/images/home_health.png',
+                width: 60,
+              ),
+              Image.asset(
+                'assets/images/home_univ.png',
+                width: 60,
+              ),
+            ],
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text('노동'),
+              Text('의료'),
+              Text('대학생활'),
+            ],
+          ),
+          */
 
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.grey[200],
+                    child: Image.asset('assets/images/home_work.png'),
+                    radius: 30,
+                  ).paddingOnly(bottom: 10),
+                  Text('노동'),
+                ],
+              ),
+              Column(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.grey[200],
+                    child: Image.asset('assets/images/home_health.png'),
+                    radius: 30,
+                  ).paddingOnly(bottom: 10),
+                  Text('의료'),
+                ],
+              ),
+              Column(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.grey[200],
+                    child: Image.asset('assets/images/home_univ.png'),
+                    radius: 30,
+                  ).paddingOnly(bottom: 10),
+                  Text('대학생활'),
+                ],
+              ),
+            ],
+          )
+
+
+
+/*
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -34,7 +100,7 @@ class Home1 extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 30,
-                    backgroundImage: AssetImage('assets/images/icon_work.png'),
+                    backgroundImage: AssetImage("assets/images/icon_work.png"),
                   ),
                   SizedBox(height: 5),
                   Text('노동'),
@@ -66,6 +132,7 @@ class Home1 extends StatelessWidget {
               // _buildCircleAvatarButton(context, '대학생활', 'assets/images/icon_univ.png', '/univ'),
             ],
           ),
+*/
 
         ],
       ),
@@ -202,7 +269,7 @@ class Home1 extends StatelessWidget {
           
           //_storyBoardList(),
           //_hello(),
-          //_infoBox(context),
+          _infoBox(),
           
           _postList(),
         ],
