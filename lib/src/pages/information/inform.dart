@@ -20,43 +20,54 @@ class Inform extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: Color(0xFF241701),
               ),
-            ).paddingOnly(top: 40, left: 30),
+            ).paddingOnly(top: 46, left: 30),
             const Text(
-              '유용한 정보를 제공하는 링크들이 모여있습니다.',
+              '유용한 정보를 제공하는 사이트들이 모여있습니다.',
               style: TextStyle(
                 fontSize: 14,
                 color: Color(0xFF505050),
               ),
-            ).paddingOnly(top: 8, left: 30),
+            ).paddingOnly(top: 4, left: 30),
 
             // 찾기 쉬운 생활 법령 정보
             Container(
               width: 400,
               decoration: BoxDecoration(
-                color: const Color(0xFFD4D4D4),
-                border: Border.all(color: const Color(0xFFD2D2D2)),
+                color: Colors.grey[200],
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(17),
                   topRight: Radius.circular(17),
                 ),
+                border: Border.all(color: const Color(0xFFD2D2D2)),
               ),
-              margin: const EdgeInsets.only(top: 28, right: 20, left: 20),
-              padding: const EdgeInsets.only(top: 5, left: 26, bottom: 5),
+              margin: const EdgeInsets.only(top: 26, right: 20, left: 20),
+              padding: const EdgeInsets.only(top: 0, left: 26, bottom: 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    '찾기 쉬운 생활 법령 정보',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Color(0xFF170F01),
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/icon_link_1.png', // 이미지 경로 설정
+                        height: 30,
+                        width: 30,
+                      ),
+                      const SizedBox(
+                          width: 8), // Add some space between image and text
+                      const Text(
+                        '찾기 쉬운 생활 법령 정보',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFF170F01),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                   TextButton(
                     onPressed: () async {
                       const url =
-                          'https://easylaw.go.kr/CSM/EasyCardSubMain.laf';
+                          'https://easylaw.go.kr/CSP/CnpClsMain.laf?csmSeq=508&ccfNo=3&cciNo=7&cnpClsNo=1';
                       if (await canLaunch(url)) {
                         await launch(url);
                       } else {
@@ -64,17 +75,16 @@ class Inform extends StatelessWidget {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF52B160), // 버튼의 배경색
+                      backgroundColor: const Color(0xFF52B160),
                       shape: RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(30.0), // 테두리 모서리를 둥글게
+                        borderRadius: BorderRadius.circular(30.0),
                       ),
-                      fixedSize: const Size(65, 10), // 가로 길이 98, 세로 길이 35.89
+                      fixedSize: const Size(65, 10),
                     ),
                     child: const Text(
                       '바로가기',
-                      style: TextStyle(color: Colors.white, fontSize: 11),
-                    ).paddingZero,
+                      style: TextStyle(color: Colors.white, fontSize: 10),
+                    ).marginZero,
                   ).marginOnly(right: 13),
                 ],
               ),
@@ -90,26 +100,67 @@ class Inform extends StatelessWidget {
                 ),
               ),
               margin: const EdgeInsets.only(top: 0, right: 20, left: 20),
-              padding: const EdgeInsets.only(top: 28, left: 28, bottom: 22),
-              child: const Column(
+              padding: const EdgeInsets.only(top: 10, left: 28, bottom: 10),
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    '다양한 언어 제공',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Color(0xFF505050),
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '다양한 언어 제공',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFF505050),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      IconButton(
+                        icon: Image.asset(
+                          'assets/images/arrow_button.png', // 이미지 경로 설정
+                          height: 16,
+                          width: 16,
+                        ),
+                        onPressed: () async {
+                          const url =
+                              'https://easylaw.go.kr/CSM/EasyCardSubMain.laf';
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            print('링크 안넘어가짐');
+                          }
+                        },
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 10),
-                  Text(
-                    '카드뉴스 형식으로 보기 쉽게 제공',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Color(0xFF505050),
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '카드뉴스 형식으로 보기 쉽게 제공',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFF505050),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      IconButton(
+                        icon: Image.asset(
+                          'assets/images/arrow_button.png',
+                          height: 16,
+                          width: 16, // 이미지 경로 설정
+                        ),
+                        onPressed: () async {
+                          const url =
+                              'https://easylaw.go.kr/CSP/CsmSortRetrieveLst.laf?sortType=easy&search_put=';
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            print('링크 안넘어가짐');
+                          }
+                        },
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -118,25 +169,35 @@ class Inform extends StatelessWidget {
             Container(
               width: 400,
               decoration: BoxDecoration(
-                color: const Color(0xFFD4D4D4),
+                color: Colors.grey[200],
                 border: Border.all(color: const Color(0xFFD2D2D2)),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(17),
                   topRight: Radius.circular(17),
                 ),
               ),
-              margin: const EdgeInsets.only(top: 28, right: 20, left: 20),
-              padding: const EdgeInsets.only(top: 5, left: 26, bottom: 5),
+              margin: const EdgeInsets.only(top: 24, right: 20, left: 20),
+              padding: const EdgeInsets.only(top: 0, left: 26, bottom: 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    '하이코리아',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Color(0xFF170F01),
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/icon_link_2.png', // 이미지 경로 설정
+                        width: 30,
+                        height: 30,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        '하이코리아',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFF170F01),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                   TextButton(
                     onPressed: () async {
@@ -157,7 +218,7 @@ class Inform extends StatelessWidget {
                     ),
                     child: const Text(
                       '바로가기',
-                      style: TextStyle(color: Colors.white, fontSize: 11),
+                      style: TextStyle(color: Colors.white, fontSize: 10),
                     ).paddingZero,
                   ).marginOnly(right: 13),
                 ],
@@ -174,7 +235,7 @@ class Inform extends StatelessWidget {
                 ),
               ),
               margin: const EdgeInsets.only(top: 0, right: 20, left: 20),
-              padding: const EdgeInsets.only(top: 28, left: 28, bottom: 22),
+              padding: const EdgeInsets.only(top: 26, left: 28, bottom: 22),
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -203,29 +264,39 @@ class Inform extends StatelessWidget {
             Container(
               width: 400,
               decoration: BoxDecoration(
-                color: const Color(0xFFD4D4D4),
+                color: Colors.grey[200],
                 border: Border.all(color: const Color(0xFFD2D2D2)),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(17),
                   topRight: Radius.circular(17),
                 ),
               ),
-              margin: const EdgeInsets.only(top: 28, right: 20, left: 20),
-              padding: const EdgeInsets.only(top: 5, left: 26, bottom: 5),
+              margin: const EdgeInsets.only(top: 24, right: 20, left: 20),
+              padding: const EdgeInsets.only(top: 0, left: 26, bottom: 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    '서울 외국인 포털',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Color(0xFF170F01),
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/icon_link_3.png', // 이미지 경로 설정
+                        width: 30,
+                        height: 30,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        '서울 외국인 포털',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFF170F01),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                   TextButton(
                     onPressed: () async {
-                      const url = 'https://www.hikorea.go.kr/Main.pt';
+                      const url = 'https://global.seoul.go.kr/web/main.do';
                       if (await canLaunch(url)) {
                         await launch(url);
                       } else {
@@ -242,7 +313,7 @@ class Inform extends StatelessWidget {
                     ),
                     child: const Text(
                       '바로가기',
-                      style: TextStyle(color: Colors.white, fontSize: 11),
+                      style: TextStyle(color: Colors.white, fontSize: 10),
                     ).paddingZero,
                   ).marginOnly(right: 13),
                 ],
@@ -259,7 +330,7 @@ class Inform extends StatelessWidget {
                 ),
               ),
               margin: const EdgeInsets.only(top: 0, right: 20, left: 20),
-              padding: const EdgeInsets.only(top: 28, left: 28, bottom: 22),
+              padding: const EdgeInsets.only(top: 26, left: 28, bottom: 22),
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -293,7 +364,7 @@ class Inform extends StatelessWidget {
                   Text(
                     '\t\t(한국어, 영어, 중국어 지원)',
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 12,
                       color: Color(0xFF505050),
                       fontWeight: FontWeight.bold,
                     ),
@@ -306,29 +377,39 @@ class Inform extends StatelessWidget {
             Container(
               width: 400,
               decoration: BoxDecoration(
-                color: const Color(0xFFD4D4D4),
+                color: Colors.grey[200],
                 border: Border.all(color: const Color(0xFFD2D2D2)),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(17),
                   topRight: Radius.circular(17),
                 ),
               ),
-              margin: const EdgeInsets.only(top: 28, right: 20, left: 20),
-              padding: const EdgeInsets.only(top: 5, left: 26, bottom: 5),
+              margin: const EdgeInsets.only(top: 24, right: 20, left: 20),
+              padding: const EdgeInsets.only(top: 0, left: 26, bottom: 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    '세종학당재단',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Color(0xFF170F01),
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/icon_link_4.png', // 이미지 경로 설정
+                        width: 30,
+                        height: 30,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        '세종학당재단',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFF170F01),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                   TextButton(
                     onPressed: () async {
-                      const url = 'https://www.hikorea.go.kr/Main.pt';
+                      const url = 'https://www.ksif.or.kr/intro.do';
                       if (await canLaunch(url)) {
                         await launch(url);
                       } else {
@@ -345,7 +426,7 @@ class Inform extends StatelessWidget {
                     ),
                     child: const Text(
                       '바로가기',
-                      style: TextStyle(color: Colors.white, fontSize: 11),
+                      style: TextStyle(color: Colors.white, fontSize: 10),
                     ).paddingZero,
                   ).marginOnly(right: 13),
                 ],
@@ -391,29 +472,40 @@ class Inform extends StatelessWidget {
             Container(
               width: 400,
               decoration: BoxDecoration(
-                color: const Color(0xFFD4D4D4),
+                color: Colors.grey[200],
                 border: Border.all(color: const Color(0xFFD2D2D2)),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(17),
                   topRight: Radius.circular(17),
                 ),
               ),
-              margin: const EdgeInsets.only(top: 28, right: 20, left: 20),
-              padding: const EdgeInsets.only(top: 5, left: 26, bottom: 5),
+              margin: const EdgeInsets.only(top: 24, right: 20, left: 20),
+              padding: const EdgeInsets.only(top: 0, left: 26, bottom: 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    '다누리포털',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Color(0xFF170F01),
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/icon_link_3.png', // 이미지 경로 설정
+                        width: 30,
+                        height: 30,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        '다누리포털',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFF170F01),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                   TextButton(
                     onPressed: () async {
-                      const url = 'https://www.hikorea.go.kr/Main.pt';
+                      const url =
+                          'https://www.liveinkorea.kr/portal/KOR/main/main.do';
                       if (await canLaunch(url)) {
                         await launch(url);
                       } else {
@@ -430,9 +522,9 @@ class Inform extends StatelessWidget {
                     ),
                     child: const Text(
                       '바로가기',
-                      style: TextStyle(color: Colors.white, fontSize: 11),
+                      style: TextStyle(color: Colors.white, fontSize: 10),
                     ).paddingZero,
-                  ).marginOnly(right: 13),
+                  ).marginOnly(right: 13).paddingZero,
                 ],
               ),
             ),
