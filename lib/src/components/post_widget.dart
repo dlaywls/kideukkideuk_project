@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:kideukkideuk_project/src/components/avatar_widget.dart';
 import 'package:kideukkideuk_project/src/components/image_data.dart';
 
@@ -11,12 +12,24 @@ class PostWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          AvatarWidget(
-            type: AvatarType.TYPE3,
-            nickname: '노동정보',
-            size: 40,
-            thumbPath: 
-              'https://img.gqkorea.co.kr/gq/2022/09/style_632ac6869b755.jpg',
+          Row(
+            children: [
+              CircleAvatar(
+                backgroundColor: const Color(0xFFF4D8DF),
+                radius: 18,
+                child: Image.asset(
+                  'assets/images/home_work.png',
+                  width: 25,),
+              ).paddingOnly(left: 3),
+              const Text(
+                '노동정보',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ).paddingOnly(left: 10)
+            ],
           ),
           GestureDetector(
             onTap: () {},
@@ -24,7 +37,7 @@ class PostWidget extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ImageData(
                 IconsPath.postMoreIcon,
-                size: 30,
+                size: 15,
               ),
             ),
           ),  
@@ -46,7 +59,6 @@ class PostWidget extends StatelessWidget {
     return ClipRRect(
       child: Image.asset('assets/images/1.jpg'),
       borderRadius: BorderRadius.circular(20.0),
-      
     );
     */
     return Container(
@@ -85,7 +97,7 @@ class PostWidget extends StatelessWidget {
           ImageData(
             IconsPath.bookMarkOffIcon,
             size: 50,
-          ),
+          ).paddingOnly(right: 8),
         ],
       ),
     );

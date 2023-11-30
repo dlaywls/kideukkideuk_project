@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kideukkideuk_project/src/pages/mypage/account.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Inform extends StatelessWidget {
