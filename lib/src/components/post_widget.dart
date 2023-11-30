@@ -4,12 +4,17 @@ import 'package:kideukkideuk_project/src/components/image_data.dart';
 import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 
 final List<String> imgList = [
-  "assets/cards/work/1.jpg",
-  "assets/cards/work/2.jpg",
-  "assets/cards/work/3.jpg",
-  "assets/cards/work/4.jpg",
+  "assets/cards/work/1_1.jpg",
+  "assets/cards/work/1_2.jpg",
+  "assets/cards/work/1_3.jpg",
+  "assets/cards/work/1_4.jpg",
+  "assets/cards/work/1_5.jpg",
+  "assets/cards/work/1_6.jpg",
+  "assets/cards/work/1_7.jpg",
+  "assets/cards/work/1_8.jpg",
+  "assets/cards/work/1_9.jpg",
+  "assets/cards/work/1_10.jpg",
 ];
-
 
 class PostWidget extends StatelessWidget {
   const PostWidget({Key? key}) : super (key: key);
@@ -57,19 +62,48 @@ class PostWidget extends StatelessWidget {
 
   Widget _image() {
     return SizedBox(
-      height: 365,
+      height: 370,
       child: Swiper(
         itemCount: imgList.length,
         itemBuilder: (BuildContext context, int index) {
-          return Image.asset(imgList[index], fit: BoxFit.contain);
+          return Image.asset(imgList[index], fit: BoxFit.scaleDown);
         },
-        pagination: const SwiperPagination(),
+        pagination: const SwiperPagination(
+          alignment: Alignment.bottomCenter
+        ),
         control: const SwiperControl(),
         scrollDirection: Axis.horizontal,
         loop: false,
       ),
     );
   }
+
+  Widget _image1() {
+    return SizedBox(
+      height: 370,
+      child: Swiper(
+        itemCount: imgList.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Image.asset(imgList[index], fit: BoxFit.scaleDown);
+        },
+        pagination: const SwiperPagination(
+          builder: DotSwiperPaginationBuilder(
+            color: Colors.grey,
+              activeColor: Colors.brown,
+              size: 8,
+              activeSize: 8,
+              space: 5,
+          ),
+          margin: EdgeInsets.only(bottom:15), // 조정 가능한 값
+        ),
+        control: const SwiperControl(),
+        scrollDirection: Axis.horizontal,
+        loop: false,
+        outer: true,
+      ),
+    );
+  }
+
 
   Widget _infoCount() {
     return Padding(
@@ -113,8 +147,9 @@ class PostWidget extends StatelessWidget {
         children: [
           _header(), // 헤더
           const SizedBox(height: 10),
-          _image(), // 이미지영역
-          _infoCount(), // 좋아요 영역
+          _image1(), // 이미지영역
+          //_image(),
+          //_infoCount(), // 좋아요 영역
           // _infoDescription(), // 글 영역
           // _replyTextBtn(), // 댓글 영역
           // _dateAgo(),
