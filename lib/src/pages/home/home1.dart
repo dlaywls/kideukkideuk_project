@@ -26,34 +26,7 @@ class Home1 extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ).paddingOnly(top: 15, left: 15, bottom: 20),
-/*
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset(
-                'assets/images/home_work.png',
-                width: 60,
-              ),
-              Image.asset(
-                'assets/images/home_health.png',
-                width: 60,
-              ),
-              Image.asset(
-                'assets/images/home_univ.png',
-                width: 60,
-              ),
-            ],
-          ),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text('노동'),
-              Text('의료'),
-              Text('대학생활'),
-            ],
-          ),
-          */
-
+         
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -61,129 +34,38 @@ class Home1 extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     backgroundColor: Colors.grey[200],
+                    radius: 30,
                     child: Image.asset('assets/images/home_work.png'),
-                    radius: 30,
                   ).paddingOnly(bottom: 10),
-                  Text('노동'),
+                  const Text('노동'),
                 ],
               ),
               Column(
                 children: [
                   CircleAvatar(
                     backgroundColor: Colors.grey[200],
+                    radius: 30,
                     child: Image.asset('assets/images/home_health.png'),
-                    radius: 30,
                   ).paddingOnly(bottom: 10),
-                  Text('의료'),
+                  const Text('의료'),
                 ],
               ),
               Column(
                 children: [
                   CircleAvatar(
                     backgroundColor: Colors.grey[200],
-                    child: Image.asset('assets/images/home_univ.png'),
                     radius: 30,
+                    child: Image.asset('assets/images/home_univ.png'),
                   ).paddingOnly(bottom: 10),
-                  Text('대학생활'),
+                  const Text('대학생활'),
                 ],
               ),
             ],
           )
-
-
-
-/*
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Column(
-                children: [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage("assets/images/icon_work.png"),
-                  ),
-                  SizedBox(height: 5),
-                  Text('노동'),
-                ],
-              ),
-              Column(
-                children: [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage('assets/images/icon_health.png'),
-                  ),
-                  SizedBox(height: 5),
-                  Text('의료'),
-                ],
-              ),
-              Column(
-                children: [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage('assets/images/icon_univ.png'),
-                  ),
-                  SizedBox(height: 5),
-                  Text('대학생활'),
-                ],
-              ),
-            
-              // _buildCircleAvatarButton(context, '노동', 'assets/images/icon_work.png', '/work'),
-              // _buildCircleAvatarButton(context, '의료', 'assets/images/icon_health.png', '/health'),
-              // _buildCircleAvatarButton(context, '대학생활', 'assets/images/icon_univ.png', '/univ'),
-            ],
-          ),
-*/
-
         ],
       ),
     );
   }
-
-/*
-  Widget _buildCircleAvatarButton(String label, String imagePath) {
-    return Column(
-      children: [
-        CircleAvatar(
-          radius: 33,
-          backgroundImage: AssetImage(imagePath),
-        ),
-        SizedBox(height: 10),
-        Text(
-          label,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-          ),  
-        ),
-      ],
-    );
-  }
-*/
-
-  // 버튼 페이지 이동
-  /*
-  Widget _buildCircleAvatarButton(BuildContext context, String label, String imagePath, String route) {
-    return GestureDetector(
-      onTap: () {
-        // 버튼 클릭 시 다른 페이지로 이동
-        Navigator.pushNamed(
-          context, route
-        );
-      },
-      child: Column(
-        children: [
-          CircleAvatar(
-            radius: 30,
-            backgroundImage: AssetImage(imagePath),
-          ),
-          const SizedBox(height: 5),
-          Text(label),
-        ],
-      ),
-      
-    );
-  }
-
-*/
   // 게시글 세로 스크롤 리스트
   Widget _postList() {
     return Column(

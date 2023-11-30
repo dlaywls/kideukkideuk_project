@@ -61,7 +61,7 @@ class _CommentPageState extends State<CommentPage> {
 
   @override
   Widget build(BuildContext context) {
-    print("postId: " + widget.postId);
+    print("postId: ${widget.postId}");
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -93,16 +93,16 @@ class _CommentPageState extends State<CommentPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
+                  const Row(
                     children: [
                       //프로필 정보
                       Icon(Icons.person, size: 30),
                       Text(
                         '  익명',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFFF170F01),
+                          color: Color(0xfff170f01),
                         ),
                       )
                     ],
@@ -117,7 +117,7 @@ class _CommentPageState extends State<CommentPage> {
                   //글 내용
                   Text(widget.content,
                           style: const TextStyle(
-                              fontSize: 14, color: Color(0xFFF170F01)))
+                              fontSize: 14, color: Color(0xfff170f01)))
                       .marginOnly(left: 8, bottom: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -235,15 +235,15 @@ class _CommentPageState extends State<CommentPage> {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
+                        const Row(
                           children: [
                             Icon(Icons.person, size: 18),
                             Text(
                               '  익명',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                                color: Color(0xFFF170F01),
+                                color: Color(0xfff170f01),
                               ),
                             )
                           ],

@@ -38,5 +38,6 @@ class CommnetController extends GetxController {
       // 실패한 경우 예외 처리
       print("댓글 내용 가져오기 실패: $e");
     }
+    return null;
   }
 }

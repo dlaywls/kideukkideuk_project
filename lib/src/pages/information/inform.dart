@@ -33,7 +33,7 @@ class Inform extends StatelessWidget {
             Container(
               width: 400,
               decoration: BoxDecoration(
-                color: Color(0xFFD4D4D4),
+                color: const Color(0xFFD4D4D4),
                 border: Border.all(color: const Color(0xFFD2D2D2)),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(17),
@@ -102,7 +102,7 @@ class Inform extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Text(
                     '카드뉴스 형식으로 보기 쉽게 제공',
                     style: TextStyle(
@@ -118,7 +118,7 @@ class Inform extends StatelessWidget {
             Container(
               width: 400,
               decoration: BoxDecoration(
-                color: Color(0xFFD4D4D4),
+                color: const Color(0xFFD4D4D4),
                 border: Border.all(color: const Color(0xFFD2D2D2)),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(17),
@@ -186,7 +186,7 @@ class Inform extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Text(
                     '(한국어, 영어, 중국어 지원)',
                     style: TextStyle(
@@ -203,7 +203,7 @@ class Inform extends StatelessWidget {
             Container(
               width: 400,
               decoration: BoxDecoration(
-                color: Color(0xFFD4D4D4),
+                color: const Color(0xFFD4D4D4),
                 border: Border.all(color: const Color(0xFFD2D2D2)),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(17),
@@ -215,7 +215,7 @@ class Inform extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     '서울 외국인 포털',
                     style: TextStyle(
                       fontSize: 14,
@@ -271,7 +271,7 @@ class Inform extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Text(
                     '●\t\t교육, 문화 등 다양한 프로그램 제공',
                     style: TextStyle(
@@ -280,7 +280,7 @@ class Inform extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Text(
                     '●\t\t서울에 거주하는 외국인을 위한 서울 생활에 대한 조언',
                     style: TextStyle(
@@ -289,7 +289,7 @@ class Inform extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 15),
+                  SizedBox(height: 15),
                   Text(
                     '\t\t(한국어, 영어, 중국어 지원)',
                     style: TextStyle(
@@ -306,7 +306,7 @@ class Inform extends StatelessWidget {
             Container(
               width: 400,
               decoration: BoxDecoration(
-                color: Color(0xFFD4D4D4),
+                color: const Color(0xFFD4D4D4),
                 border: Border.all(color: const Color(0xFFD2D2D2)),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(17),
@@ -318,7 +318,7 @@ class Inform extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     '세종학당재단',
                     style: TextStyle(
                       fontSize: 14,
@@ -374,7 +374,7 @@ class Inform extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Text(
                     '\t\t(한국어, 영어, 중국어 지원)',
                     style: TextStyle(
@@ -391,7 +391,7 @@ class Inform extends StatelessWidget {
             Container(
               width: 400,
               decoration: BoxDecoration(
-                color: Color(0xFFD4D4D4),
+                color: const Color(0xFFD4D4D4),
                 border: Border.all(color: const Color(0xFFD2D2D2)),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(17),
@@ -403,7 +403,7 @@ class Inform extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     '다누리포털',
                     style: TextStyle(
                       fontSize: 14,
@@ -459,7 +459,7 @@ class Inform extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Text(
                     '●\t\t다문화 가정이 한국에서 지원과 보살핌을 받으며 생활할 수 있도록 도와줌',
                     style: TextStyle(
@@ -468,7 +468,7 @@ class Inform extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 15),
+                  SizedBox(height: 15),
                   Text(
                     '(13개국어 지원)',
                     style: TextStyle(

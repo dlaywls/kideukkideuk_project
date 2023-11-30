@@ -10,8 +10,8 @@ class CommentRepository {
       FirebaseFirestore.instance.collection('comments');
 
   late final NotificationRepository notificationRepository =
-      new NotificationRepository();
-  late final PostRepository postRepository = new PostRepository();
+      NotificationRepository();
+  late final PostRepository postRepository = PostRepository();
 
   //댓글 등록하기
   Future<void> addComment({
