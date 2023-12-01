@@ -116,6 +116,8 @@ class Home1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        
+        automaticallyImplyLeading: false,
         elevation: 0,
         title: Row(
           children: [
