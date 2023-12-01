@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kideukkideuk_project/src/pages/logout.dart';
 import 'package:kideukkideuk_project/src/pages/mypage/account.dart';
 
 class Mypage extends StatelessWidget {
@@ -9,6 +10,7 @@ class Mypage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         elevation: 0,
         title: Row(
           children: [ 
@@ -322,7 +324,7 @@ class Mypage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Account(edit: edit),
+                                builder: (context) => Logout(edit),
                               ),
                             );
                           },
