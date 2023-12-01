@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Account extends StatefulWidget {
   final String edit;
@@ -31,8 +32,28 @@ class _AccountState extends State<Account> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text(widget.edit),
-      ),
+        elevation: 0,
+        automaticallyImplyLeading: true,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios, // 뒤로가기 아이콘
+            color: Colors.brown, // 아이콘 색상
+          ),
+          onPressed: () {
+            Navigator.pop(context); // 현재 페이지에서 뒤로가기
+          },
+        ),
+        centerTitle: true, // 타이틀 가운데 정렬
+          title: const Text(
+                '이메일 변경',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                )
+              ).paddingOnly(left: 10)
+          ),
+
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -66,6 +87,9 @@ class _AccountState extends State<Account> {
                 Navigator.pop(context); // 현재 페이지 닫기
                 _showSnackBar('이메일이 변경되었습니다.');
               },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF52B160), // 버튼 색상 변경
+              ),
               child: const Text('저장'),
             ),
           ],

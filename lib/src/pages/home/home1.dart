@@ -9,70 +9,6 @@ import 'package:kideukkideuk_project/src/pages/home/work.dart';
 class Home1 extends StatelessWidget {
   const Home1({Key? key}) : super (key: key);
   
-  /*
-  // 정보 바로보기
-  Widget _infoBox() {
-    return Container(
-      height: 170,
-      decoration: BoxDecoration(
-        border: Border.all(color: const Color(0xFFD2D2D2)),
-        borderRadius: BorderRadius.circular(17),
-      ),
-      margin: const EdgeInsets.only(right: 20, left: 20, bottom: 5),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            '정보 바로보기',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
-          ).paddingOnly(top: 15, left: 15, bottom: 20),
-         
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Column(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.grey[200],
-                    radius: 30,
-                    child: Image.asset('assets/images/home_work.png'),
-                  ).paddingOnly(bottom: 10),
-                  const Text('노동'),
-                ],
-              ),
-              Column(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.grey[200],
-                    radius: 30,
-                    child: Image.asset('assets/images/home_health.png'),
-                  ).paddingOnly(bottom: 10),
-                  const Text('의료'),
-                ],
-              ),
-              Column(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.grey[200],
-                    radius: 30,
-                    child: Image.asset('assets/images/home_univ.png'),
-                  ).paddingOnly(bottom: 10),
-                  const Text('대학생활'),
-                ],
-              ),
-            ],
-          )
-        ],
-      ),
-    );
-  }
-  
-  */
-
   // 정보 바로보기
   Widget _infoBox(BuildContext context) {
     return Container(
@@ -169,7 +105,6 @@ class Home1 extends StatelessWidget {
     );
   }
   
-  
   // 게시글 세로 스크롤 리스트
   Widget _postList() {
     return Column(
@@ -208,7 +143,7 @@ class Home1 extends StatelessWidget {
                   ),
                 ).paddingOnly(left: 8),
               ),
-  
+  /*
             const Text(
               '키득키득',
               style: TextStyle(
@@ -217,11 +152,16 @@ class Home1 extends StatelessWidget {
                 color: Color(0xFF241701),
               )
             ).paddingOnly(left: 10)
+            */
+            
           ],
         ),
         actions: [
-          GestureDetector(
-            onTap: () {},
+          InkWell(
+            onTap: () {
+              // 터치 시 포커스 설정하여 키보드 나타나게 하기
+              FocusScope.of(context).requestFocus(FocusNode());
+            },
             child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: ImageData(

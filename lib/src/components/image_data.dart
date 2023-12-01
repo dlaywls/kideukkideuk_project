@@ -52,5 +52,7 @@ class IconsPath {
   static String get homeHealthIcon => 'assets/images/home_health.png';
   static String get homeUnivIcon => 'assets/images/home_univ.png';
   static String get logoText => 'assets/images/logo_text.png';
+
+  static String get backButton => 'assets/imgages/button_back.png';
 }
 //>>>>>>> main
