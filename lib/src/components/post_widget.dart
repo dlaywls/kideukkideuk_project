@@ -19,6 +19,7 @@ final List<String> imgList = [
 class PostWidget extends StatelessWidget {
   const PostWidget({Key? key}) : super(key: key);
 
+  // 노동정보 헤더
   Widget _header() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -57,6 +58,7 @@ class PostWidget extends StatelessWidget {
     );
   }
 
+  // 이미지 뷰
   Widget _image() {
     return SizedBox(
       height: 370,
@@ -108,10 +110,6 @@ class PostWidget extends StatelessWidget {
         const SizedBox(height: 10),
         _image1(), // 이미지영역
         //_image(),
-        //_infoCount(), // 좋아요 영역
-        // _infoDescription(), // 글 영역
-        // _replyTextBtn(), // 댓글 영역
-        // _dateAgo(),
       ]),
     );
   }
