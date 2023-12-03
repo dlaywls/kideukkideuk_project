@@ -4,6 +4,7 @@ import 'package:kideukkideuk_project/src/app.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:kideukkideuk_project/src/controller/auth_controller.dart';
 import 'package:kideukkideuk_project/src/models/kideuk_user.dart';
+import 'package:kideukkideuk_project/src/pages/login.dart';
 import 'package:kideukkideuk_project/src/pages/signupPage.dart';
 
 class Root extends GetView<AuthController> {
@@ -28,7 +29,8 @@ class Root extends GetView<AuthController> {
             },
           );
         } else {
-          return const App();
+          print("로그인 안됨.");
+          return const Login();
         }
       },
     );
