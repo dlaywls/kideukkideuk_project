@@ -37,7 +37,7 @@ final List<String> imgList3 = [
 class Univ extends StatelessWidget {
   const Univ({super.key});
 
-  // 노동정보 헤더
+  // 대학생활 헤더
   Widget _header() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
