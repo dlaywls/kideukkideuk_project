@@ -152,7 +152,7 @@ class PostView extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0), // 테두리 모서리를 둥글게
                   ),
-                  fixedSize: const Size(98, 35.89), // 가로 길이 98, 세로 길이 35.89
+                  fixedSize: const Size(100, 35.89), // 가로 길이 98, 세로 길이 35.89
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -160,11 +160,12 @@ class PostView extends StatelessWidget {
                     Image.asset(
                       'assets/images/icon_write.png', // 이미지 경로 설정
                     ),
-                    const SizedBox(width: 4.0), // 이미지와 텍스트 사이의 간격 조절
+                    const SizedBox(width: 2.0), // 이미지와 텍스트 사이의 간격 조절
                     const Text(
                       '글쓰기',
-                      style: TextStyle(
-                        fontSize: 14.0,
+                      style: const TextStyle(
+                        fontSize: 12.0,
+                        color: Colors.white,
                       ),
                     ),
                   ],
