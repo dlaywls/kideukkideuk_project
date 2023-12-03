@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
+import 'package:kideukkideuk_project/src/app.dart';
 import 'package:kideukkideuk_project/src/controller/auth_controller.dart';
 import 'package:kideukkideuk_project/src/models/kideuk_user.dart';
 
@@ -67,6 +68,10 @@ class _SignupPageState extends State<SignupPage> {
                 var signupUser =
                     KUser(uid: widget.uid, nickname: nicknameController.text);
                 AuthController.to.signup(signupUser);
+                Navigator.pushReplacement(context, 
+                    MaterialPageRoute(
+                      builder: (context) => App()
+                    ),);
               },
               style: ElevatedButton.styleFrom(
                 primary: const Color(0xFF52B160),

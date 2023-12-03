@@ -31,6 +31,7 @@ class Root extends GetView<AuthController> {
         } else {
           print("로그인 안됨.");
           return const Login();
+          //return const App(); // Login() -> App()
         }
       },
     );
