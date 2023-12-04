@@ -98,8 +98,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:kideukkideuk_project/root.dart';
-import 'package:kideukkideuk_project/src/app.dart';
-import 'package:kideukkideuk_project/src/pages/login.dart';
 
 class Logout extends StatelessWidget {
   const Logout(String edit, {Key? key}) : super(key: key);
@@ -117,7 +115,7 @@ class Logout extends StatelessWidget {
         elevation: 0,
         automaticallyImplyLeading: true,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_ios, // 뒤로가기 아이콘
             color: Colors.brown, // 아이콘 색상
           ),
@@ -148,14 +146,13 @@ class Logout extends StatelessWidget {
               onPressed: () async {
                 await signOut();
                 Navigator.pushReplacement(context, 
-                MaterialPageRoute(builder: (context) => Root()),
+                MaterialPageRoute(builder: (context) => const Root()),
                 );
 
                 //Navigator.pop(context); // 로그아웃 후 현재 화면 닫기
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                onPrimary: Colors.black,
+                foregroundColor: Colors.black, backgroundColor: Colors.white,
               ),
               child: const Text('로그아웃'),
             ),

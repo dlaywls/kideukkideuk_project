@@ -49,7 +49,7 @@ class _SignupPageState extends State<SignupPage> {
                 contentPadding: const EdgeInsets.all(10),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(14),
-                  borderSide: BorderSide(color: Colors.grey, width: 1),
+                  borderSide: const BorderSide(color: Colors.grey, width: 1),
                 ),
               ),
             ),
@@ -70,11 +70,11 @@ class _SignupPageState extends State<SignupPage> {
                 AuthController.to.signup(signupUser);
                 Navigator.pushReplacement(context, 
                     MaterialPageRoute(
-                      builder: (context) => App()
+                      builder: (context) => const App()
                     ),);
               },
               style: ElevatedButton.styleFrom(
-                primary: const Color(0xFF52B160),
+                backgroundColor: const Color(0xFF52B160),
                 padding: const EdgeInsets.all(15),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22),

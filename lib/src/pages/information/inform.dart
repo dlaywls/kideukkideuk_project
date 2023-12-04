@@ -107,7 +107,7 @@ class Inform extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         '다양한 언어 제공',
                         style: TextStyle(
                           fontSize: 14,
@@ -136,7 +136,7 @@ class Inform extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         '카드뉴스 형식으로 보기 쉽게 제공',
                         style: TextStyle(
                           fontSize: 14,

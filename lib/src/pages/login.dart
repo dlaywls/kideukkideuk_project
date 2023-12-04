@@ -37,7 +37,7 @@ class Login extends StatelessWidget {
             Container(
               width: 200, // 이미지의 폭 설정
               height: 200, // 이미지의 높이 설정
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image:
                       AssetImage('assets/images/home_logo.png'), // 이미지 파일 경로 설정
@@ -49,8 +49,7 @@ class Login extends StatelessWidget {
             ElevatedButton(
               onPressed: signInWithGoogle,
               style: ElevatedButton.styleFrom(
-                primary: Colors.white, // 버튼 배경색
-                onPrimary: Colors.black, // 버튼 글씨색
+                foregroundColor: Colors.black, backgroundColor: Colors.white, // 버튼 글씨색
               ),
               child: const Text('Google 계정으로 로그인'), // 버튼 텍스트
             ),

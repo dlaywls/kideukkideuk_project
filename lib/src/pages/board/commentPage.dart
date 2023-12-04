@@ -224,7 +224,7 @@ class _CommentPageState extends State<CommentPage> {
                     color: Colors.white,
                     child: ListView.builder(
                       shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: commentController.comments.length,
                       itemBuilder: (context, index) {
                         Comment comment = commentController.comments[index];
@@ -263,18 +263,18 @@ class _CommentPageState extends State<CommentPage> {
           ),
           // 댓글 쓰는 곳
           Container(
-            padding: EdgeInsets.all(5),
+            padding: const EdgeInsets.all(5),
             child: TextField(
               controller: textEditController,
               decoration: InputDecoration(
                 hintText: "댓글을 입력하세요.",
-                hintStyle: TextStyle(fontSize: 12, color: Color(0xff9E9E9E)),
+                hintStyle: const TextStyle(fontSize: 12, color: Color(0xff9E9E9E)),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
                   borderSide: BorderSide.none,
                 ),
                 filled: true,
-                fillColor: Color(0xffECECEC),
+                fillColor: const Color(0xffECECEC),
                 contentPadding:
                     const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                 //보내기 버튼
