@@ -163,7 +163,7 @@ class PostView extends StatelessWidget {
                     const SizedBox(width: 2.0), // 이미지와 텍스트 사이의 간격 조절
                     const Text(
                       '글쓰기',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 12.0,
                         color: Colors.white,
                       ),

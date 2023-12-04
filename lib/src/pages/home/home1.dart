@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 import 'package:get/get.dart';
 import 'package:kideukkideuk_project/src/components/image_data.dart';
-import 'package:kideukkideuk_project/src/components/post_widget.dart';
 import 'package:kideukkideuk_project/src/pages/home/health.dart';
 import 'package:kideukkideuk_project/src/pages/home/univ.dart';
 import 'package:kideukkideuk_project/src/pages/home/work.dart';
@@ -74,7 +73,7 @@ class Home1 extends StatelessWidget {
                   Navigator.push(
                     context, 
                     MaterialPageRoute(
-                      builder: (context) => Work()
+                      builder: (context) => const Work()
                     ),
                   );
                 },
@@ -96,7 +95,7 @@ class Home1 extends StatelessWidget {
                   Navigator.push(
                     context, 
                     MaterialPageRoute(
-                      builder: (context) => Health()
+                      builder: (context) => const Health()
                     ),
                   );
                 },
@@ -118,7 +117,7 @@ class Home1 extends StatelessWidget {
                   Navigator.push(
                     context, 
                     MaterialPageRoute(
-                      builder: (context) => Univ()
+                      builder: (context) => const Univ()
                     ),
                   );
                 },
@@ -256,7 +255,7 @@ class Home1 extends StatelessWidget {
       child: Swiper(
         itemCount: imgList.length,
         itemBuilder: (BuildContext context, int index) {
-          return Image.asset(imgList[index], fit: BoxFit.scaleDown);
+          return Image.asset(imgList2[index], fit: BoxFit.scaleDown);
         },
         pagination: const SwiperPagination(
           builder: DotSwiperPaginationBuilder(
